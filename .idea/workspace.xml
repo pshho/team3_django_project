@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1aa6ad29-4cd9-4afc-94e9-f5dd3c787173" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test1212313.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test1212313.iml" afterDir="false" />
-    </list>
+    <list default="true" id="1aa6ad29-4cd9-4afc-94e9-f5dd3c787173" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
