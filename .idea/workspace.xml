@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1aa6ad29-4cd9-4afc-94e9-f5dd3c787173" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/polls/static/images/bg3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/static/js/c.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polls/poll/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/poll/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
   </component>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c4d074dffab297c24fc79a1791462fa18e9cfdc1
   <component name="PropertiesComponent"><![CDATA[{
@@ -44,11 +46,14 @@
     "last_opened_file_path": "E:/team3_django_project",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
 =======
+=======
+>>>>>>> 50c166996d4766ac54e95a1c163b8238e7f953ac
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;E:/BackEnd_hakwon/test1212313&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
 >>>>>>> 4e5e6b67cfa087d953f40202aecb7d9354ec34d2
@@ -57,8 +62,12 @@
     "last_opened_file_path": "C:/django_team3_project/polls/static/images",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
 >>>>>>> c4d074dffab297c24fc79a1791462fa18e9cfdc1
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/django_team3_project/polls/static/images&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+>>>>>>> 50c166996d4766ac54e95a1c163b8238e7f953ac
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\django_team3_project\polls\static\images" />
