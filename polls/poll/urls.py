@@ -22,8 +22,4 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-<<<<<<< HEAD
-=======
-    path('board/', views.board, name='board'),
->>>>>>> 50c166996d4766ac54e95a1c163b8238e7f953ac
 ]
