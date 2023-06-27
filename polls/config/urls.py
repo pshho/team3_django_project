@@ -17,8 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from poll import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('poll/', include('poll.urls')),
+    path('', views.index),
     path('community/', include('community.urls')),
+    path('notice/', include('notice.urls')),
+    path('information/', include('information.urls')),
+    path('news/', include('news.urls')),
+    path('interior/', include('interior.urls')),
+    path('review/', include('review.urls')),
+    path('introduction/', include('introduction.urls')),
+    path('calculate/', include('calculate.urls')),
 ]
