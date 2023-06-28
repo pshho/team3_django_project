@@ -101,7 +101,7 @@
         }
 
         .header-bar > .header-menu > ul ul {
-            opacity: 0;
+            display: none;
         }
 
         .header-bar > .header-menu > ul > li > a {
@@ -124,8 +124,7 @@
         }
 
         .header-bar > .header-menu > ul > li:hover > ul {
-            opacity: 1;
-            transition: opacity 1s ease;
+            display: block;
         }
 
         .header-bar > .header-menu > ul > li > ul > li {
@@ -180,22 +179,16 @@
         <section class="header-menu">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'map:search' %}">
                         <span>집찾기</span>
                     </a>
-                    <ul>
-                        <li>
-                            <input type="text" id="header_search_map" name="header_search_map">
-                            <a href="#">검색</a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#">
                         <span>청약</span>
                     </a>
                     <ul class="header-score">
-                        <li><a href="#">청약 일정</a></li>
+                        <li><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></li>
                         <li><a href="{% url 'calculate:calculate' %}">청약점수 조회</a></li>
                     </ul>
                 </li>

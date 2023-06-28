@@ -226,7 +226,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="{% url 'map:search' %}">
                     <i class="side-icon2"></i>
                     <span>집찾기</span>
                 </a>
@@ -237,7 +237,7 @@
                     <span>청약</span>
                 </a>
                 <ul>
-                    <li><a href="#">청약 일정</a></li>
+                    <li><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></li>
                     <li><a href="{% url 'calculate:calculate' %}">청약점수 조회</a></li>
                 </ul>
             </li>

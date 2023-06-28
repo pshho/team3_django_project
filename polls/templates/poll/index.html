@@ -415,7 +415,7 @@
                             <input type="text">
                             <datalist></datalist>
                         </li>
-                        <li class="main_middle_search"><button type="button"></button></li>
+                        <li class="main_middle_search"><button type="submit"></button></li>
                     </ul>
                 </div>
             </section>
@@ -432,7 +432,7 @@
                             <div></div>
                         </div>
                         <div>
-                            <p><a href="#">청약 일정</a></p>
+                            <p><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></p>
                             <p><a href="{% url 'calculate:calculate' %}">청약 점수 조회</a></p>
                         </div>
                     </div>
