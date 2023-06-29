@@ -33,4 +33,5 @@ urlpatterns = [
     path('calculate/', include('calculate.urls')),
     path('map/', include('map.urls')),
     path('koreaCalendar/', include('koreaCalendar.urls')),
+    path('common/', include('common.urls')),
 ]
