@@ -10,6 +10,7 @@ a{text-decoration: none;color: initial;}
 .board_wrap{
     width: 1000px;
     margin: 100px auto;
+    text-align: center;
     /* background-color: aquamarine; */
 }
 /* ####  board_wrap : 게시판 가장 부모영역 가장외곽 영역 #### */
