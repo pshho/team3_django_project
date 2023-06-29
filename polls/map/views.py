@@ -62,8 +62,8 @@ def map_convert(request):
         real = [model_to_dict(seoul) for seoul in seoul_real]
 
         results = {
-            'jrent':jrent,
-            'real':real
+            'jrent': jrent,
+            'real': real
         }
         return JsonResponse(results, safe=False)
 

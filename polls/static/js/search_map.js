@@ -207,7 +207,6 @@ function createMarker(lat, lng, iconUrl, text, text_list) {
     return marker;
 };
 
-
 // 메인 페이지 지도 검색
 function searchAddress(queryValue) {
     $.ajax({
@@ -255,6 +254,22 @@ $(document).ready(function() {
             var text;
             var iconUrl;
             var marker;
+
+            let jrentList = data.jrent;
+            let realList = data.real;
+            let datalist = $('#map_search_list');
+
+            $.each(jrentList, function(index, item) {
+                const option = $('<option></option>');
+                option.attr('value', item.bdnm + ' ' + item.gunm + ' ' + item.dongnm + ' ' + item.bn + '-' + item.sbn);
+                datalist.append(option)
+            });
+
+            $.each(realList, function(index, item) {
+                const option = $('<option></option>');
+                option.attr('value', item.bdnm + ' ' + item.gunm + ' ' + item.dongnm + ' ' + item.bn + '-' + item.sbn);
+                datalist.append(option)
+            });
 
             for (var i=0; i<data.real.length; i++) {
 
@@ -447,7 +462,7 @@ $(document).ready(function() {
                         break;
                 }
 
-                if (count2 === 1000) {
+                if (count2 === 800) {
                     break;
                 }
 
@@ -458,7 +473,7 @@ $(document).ready(function() {
 
         },
         error: function() {
-            console.log(url)
+            console.log('에러')
         }
     });
 

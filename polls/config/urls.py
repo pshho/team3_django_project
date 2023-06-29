@@ -22,7 +22,7 @@ from poll import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('poll/', include('poll.urls')),
-    path('', views.index),
+    path('', views.index2),
     path('community/', include('community.urls')),
     path('notice/', include('notice.urls')),
     path('information/', include('information.urls')),
@@ -33,4 +33,5 @@ urlpatterns = [
     path('calculate/', include('calculate.urls')),
     path('map/', include('map.urls')),
     path('koreaCalendar/', include('koreaCalendar.urls')),
+    path('common/', include('common.urls')),
 ]

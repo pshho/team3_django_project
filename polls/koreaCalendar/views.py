@@ -24,7 +24,8 @@ previous_month_str = str(previous_month).zfill(2)  # 한 자리 숫자일 경우
 
 # 비동기 처리 함수
 async def fetch_data(url):
-    async with aiohttp.ClientSession() as session:
+    timeout = aiohttp.ClientTimeout(total=30)  # 타임아웃 값 설정 (예: 10초)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
         async with session.get(url) as response:
             return await response.json()
 
