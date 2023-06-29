@@ -25,7 +25,7 @@ previous_month_str = str(previous_month).zfill(2)  # 한 자리 숫자일 경우
 # 비동기 처리 함수
 async def fetch_data(url):
     async with aiohttp.ClientSession() as session:
-        async with session.get(url) as response:
+        async with session.get(url, timeout=30) as response:
             return await response.json()
 
 # calendar에 청약 일정 추가하는 함수
@@ -59,29 +59,38 @@ async def koreaCalendar(request):
         # APT 분양정보 청약 접수 시작일
         for data in json_data1['data']:
             if f'{now_year}-{month}' in data['RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
             elif f'{now_year}-{month2}' in data['RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
             elif f'{previous_year}-{previous_month_str}' in data['RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
 
         # 오피스텔/도시형/민간임대 분양정보 청약 접수 시작일
         for data in json_data2['data']:
             if f'{now_year}-{month}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
             elif f'{now_year}-{month2}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
             elif f'{previous_year}-{previous_month_str}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
 
         # APT 무순위/잔여세대 일반 공급 접수 시작일
         for data in json_data3['data']:
             if f'{now_year}-{month}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
             elif f'{now_year}-{month2}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
             elif f'{previous_year}-{previous_month_str}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                data_list.append(data)
+                if data not in data_list:
+                    data_list.append(data)
 
         results = []
 
@@ -151,50 +160,62 @@ async def koreaCalendar_iframe(request, title):
         for data in json_data1['data']:
             if title == data['HOUSE_NM']:
                 if f'{now_year}-{month}' in data['RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
                 elif f'{now_year}-{month2}' in data['RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
                 elif f'{previous_year}-{previous_month_str}' in data['RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
 
         for data in json_data2['data']:
             if title == data['HOUSE_NM']:
                 if f'{now_year}-{month}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
                 elif f'{now_year}-{month2}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
                 elif f'{previous_year}-{previous_month_str}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
 
         for data in json_data3['data']:
             if title == data['HOUSE_NM']:
                 if f'{now_year}-{month}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
                 elif f'{now_year}-{month2}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
                 elif f'{previous_year}-{previous_month_str}' in data['SUBSCRPT_RCEPT_BGNDE']:
-                    house_manage = data['HOUSE_MANAGE_NO']
-                    data_list.append(data)
+                    if data not in data_list:
+                        house_manage = data['HOUSE_MANAGE_NO']
+                        data_list.append(data)
 
         for data in json_data4['data']:
             if house_manage == data['HOUSE_MANAGE_NO']:
-                data_list2.append(data)
+                if data not in data_list2:
+                    data_list2.append(data)
 
         for data in json_data5['data']:
             if house_manage == data['HOUSE_MANAGE_NO']:
-                data_list2.append(data)
+                if data not in data_list2:
+                    data_list2.append(data)
 
         for data in json_data6['data']:
             if house_manage == data['HOUSE_MANAGE_NO']:
-                data_list2.append(data)
+                if data not in data_list2:
+                    data_list2.append(data)
 
         rowspan = len(data_list2) + 1
 

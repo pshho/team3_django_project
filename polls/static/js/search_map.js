@@ -207,7 +207,37 @@ function createMarker(lat, lng, iconUrl, text, text_list) {
     return marker;
 };
 
+// 메인 페이지 지도 검색
+function searchAddress(queryValue) {
+    $.ajax({
+        type: "get",
+        url: "map_search/",
+        dataType: "json",
+        data: { query: queryValue },
+        success: function(data) {
+            if (data.items.length > 0) {
+                searchAddressToCoordinate(data.items[0].address, data.items[0].title);
+            } else {
+                searchAddressToCoordinate(query, query);
+            }
+        },
+        error: function() {
+            console.log('확인 불가');
+        }
+    });
+}
+
 $(document).ready(function() {
+    // 현재 URL의 쿼리 문자열 가져오기
+    var queryString = window.location.search;
+
+    // URLSearchParams 객체 생성
+    var params = new URLSearchParams(queryString);
+
+    // 특정 매개변수의 값을 가져오기
+    var queryValue = params.get('search_data');
+
+    searchAddress(queryValue);
     searchAddressToCoordinate('서울 강남구 테헤란로5길 24 장연빌딩', '강남 그린컴퓨터아카데미');
 
     $.ajax({
@@ -222,6 +252,22 @@ $(document).ready(function() {
             var text;
             var iconUrl;
             var marker;
+
+            let jrentList = data.jrent;
+            let realList = data.real;
+            let datalist = $('#map_search_list');
+
+            $.each(jrentList, function(index, item) {
+                const option = $('<option></option>');
+                option.attr('value', item.bdnm + ' ' + item.gunm + ' ' + item.dongnm + ' ' + item.bn + '-' + item.sbn);
+                datalist.append(option)
+            });
+
+            $.each(realList, function(index, item) {
+                const option = $('<option></option>');
+                option.attr('value', item.bdnm + ' ' + item.gunm + ' ' + item.dongnm + ' ' + item.bn + '-' + item.sbn);
+                datalist.append(option)
+            });
 
             for (var i=0; i<data.real.length; i++) {
 
@@ -425,7 +471,7 @@ $(document).ready(function() {
 
         },
         error: function() {
-            console.log(url)
+            console.log('에러')
         }
     });
 
@@ -455,7 +501,6 @@ $(document).ready(function() {
 
     });
 
-
     $('form').on('submit', function(e) {
         e.preventDefault();
         var value = $('#map_address').val();
@@ -464,7 +509,7 @@ $(document).ready(function() {
             type: "get",
             url: "map_search/",
             dataType: "json",
-            data: {q:value},
+            data: {query:value},
             success: function(data) {
                 if(data.items.length > 0) {
                     searchAddressToCoordinate(data.items[0].address, data.items[0].title);
@@ -477,7 +522,6 @@ $(document).ready(function() {
                 console.log('확인 불가');
             }
         })
-
     })
 
     // updateMarkers 스크롤 시 함수 실행
