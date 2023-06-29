@@ -403,7 +403,13 @@
             <a href="#"></a>
             <div class="main_login_register">
                 <ul>
-                    <li><a href="{% url 'common:login' %}">로그인</a></li>
+                    <li>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'common:signout' %}">{{ user.username }}(로그아웃)</a>
+                        {% else %}
+                            <a href="{% url 'common:signin' %}">로그인</a>
+                        {% endif %}
+                    </li>
                     <li><a href="{% url 'common:signup' %}">회원가입</a></li>
                 </ul>
             </div>

@@ -12,3 +12,7 @@ def board_free_write(request):
 
 def board_free_update(request):
     return render(request, 'community/board_free/board_free_update.html') # 게시판 수정
+
+
+
+
