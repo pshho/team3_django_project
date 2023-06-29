@@ -5,7 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
+</head>
+<body>
+    <aside class="side-bar">
+        <section class="side-bar-icon-box">
+            <section class="side-bar-icon1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+        </section>
+        <ul>
+            <li>
+                <a href="{% url 'map:search' %}">
+                    <i class="side-icon2"></i>
+                    <span>집찾기</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'koreaCalendar:subCalendar' %}">
+                    <i class="side-icon3"></i>
+                    <span>청약</span>
+                </a>
+                <ul>
+                    <li><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></li>
+                    <li><a href="{% url 'calculate:calculate' %}">청약점수 조회</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'information:information' %}">
+                    <i class="side-icon4"></i>
+                    <span>알려드려요</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'community:free' %}">
+                    <i class="side-icon5"></i>
+                    <span>커뮤니티</span>
+                </a>
+                <ul>
+                    <li><a href="{% url 'community:free' %}">자유게시판</a></li>
+                    <li><a href="{% url 'review:review_main' %}">거래후기 게시판</a></li>
+                    <li><a href="{% url 'interior:interior' %}">인테리어 게시판</a></li>
+                    <li><a href="{% url 'news:news' %}">뉴스</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{% url 'notice:notice' %}">
+                    <i class="side-icon6"></i>
+                    <span>고객서비스</span>
+                </a>
+                <ul>
+                    <li><a href="{% url 'notice:notice' %}">공지사항</a></li>
+                    <li><a href="{% url 'introduction:introduction' %}">소개</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+</body>
+<style>
         *{margin: 0; padding: 0;}
 
         body {
@@ -95,7 +153,7 @@
         .side-bar {
             margin-top: calc((100vh - 90vh) / 2);
             position: fixed;
-            background: #928f8f;
+            background: #9E8C99;
             width: 230px;
             min-height: 90vh;
             border-radius: 20px;
@@ -146,28 +204,28 @@
         }
 
         .side-bar > ul > li > a > .side-icon1 {
-            background-image: url('../../static/images/sidebar/검색.png');
+            background-image: url('../../static/images/menubar/검색.png');
             background-size: cover;
         }
 
         .side-bar > ul > li > a > .side-icon2 {
-            background-image: url(../../static/images/sidebar/1.지도.png);
+            background-image: url(../../static/images/menubar/1.지도.png);
             background-size: cover;
         }
         .side-bar > ul > li > a > .side-icon3 {
-            background-image: url(../../static/images/sidebar/2.청약.png);
+            background-image: url(../../static/images/menubar/2.청약.png);
             background-size: cover;
         }
         .side-bar > ul > li > a > .side-icon4 {
-            background-image: url(../../static/images/sidebar/3.알려드려요.png);
+            background-image: url(../../static/images/menubar/3.알려드려요.png);
             background-size: cover;
         }
         .side-bar > ul > li > a > .side-icon5 {
-            background-image: url(../../static/images/sidebar/4.커뮤니티.png);
+            background-image: url(../../static/images/menubar/4.커뮤니티.png);
             background-size: cover;
         }
         .side-bar > ul > li > a > .side-icon6 {
-            background-image: url(../../static/images/sidebar/5.고객서비스.png);
+            background-image: url(../../static/images/menubar/5.고객서비스.png);
             background-size: cover;
         }
         /* 사이드바 아이콘 끝 */
@@ -177,14 +235,14 @@
         }
 
         .side-bar ul > li:hover > a {
-            background: #555;
+            background: #533D46;
             border-bottom: 1px solid #999;
         }
 
         .side-bar > ul > li:hover > ul {
             display: block;
             position: absolute;
-            background: #888;
+            background: #533D46;
             top: 0;
             left: 100%;
             width: 100%;
@@ -203,73 +261,4 @@
         /* 사이드바 끝 */
 
     </style>
-</head>
-<body>
-    <aside class="side-bar">
-        <section class="side-bar-icon-box">
-            <section class="side-bar-icon1">
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
-        </section>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="side-icon1"></i>
-                    <span>메뉴 검색</span>
-                </a>
-                <ul>
-                    <li class="m_search">
-                        <input type="text" name="menu_search" id="menu_search"><a href="#">검색</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="{% url 'map:search' %}">
-                    <i class="side-icon2"></i>
-                    <span>집찾기</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="side-icon3"></i>
-                    <span>청약</span>
-                </a>
-                <ul>
-                    <li><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></li>
-                    <li><a href="{% url 'calculate:calculate' %}">청약점수 조회</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="{% url 'information:information' %}">
-                    <i class="side-icon4"></i>
-                    <span>알려드려요</span>
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'community:free' %}">
-                    <i class="side-icon5"></i>
-                    <span>커뮤니티</span>
-                </a>
-                <ul>
-                    <li><a href="{% url 'community:free' %}">자유게시판</a></li>
-                    <li><a href="{% url 'review:review_main' %}">거래후기 게시판</a></li>
-                    <li><a href="{% url 'interior:interior' %}">인테리어 게시판</a></li>
-                    <li><a href="{% url 'news:news' %}">뉴스</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="side-icon6"></i>
-                    <span>고객서비스</span>
-                </a>
-                <ul>
-                    <li><a href="{% url 'notice:notice' %}">공지사항</a></li>
-                    <li><a href="{% url 'introduction:introduction' %}">소개</a></li>
-                </ul>
-            </li>
-        </ul>
-    </aside>
-</body>
 </html>

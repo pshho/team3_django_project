@@ -144,7 +144,8 @@
         <form action="{% url 'map:map_search' %}" method="get">
             {% csrf_token %}
             <div id="map_real_estate_btn" class="map_real_estate_btn">
-                <input type="text" id="map_address" class="map_address">
+                <input type="text" id="map_address" class="map_address" list="map_search_list">
+                <datalist id="map_search_list"></datalist>
                 <input type="submit" class="map_address_search" value="찾기">
             </div>
         </form>
@@ -165,7 +166,7 @@
         // 지도 객체
         var map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(37.5666805, 126.9784147),
-            zoom: 11,
+            zoom: 17,
             mapTypeControl: true,
             mapTypeId: naver.maps.MapTypeId.NORMAL,
             enableHighAccuracy: true,

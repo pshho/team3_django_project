@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,7 +87,7 @@
         }
 
         .main_index > .main_top_index > .main_middle_index > div {
-            width: 80%;
+            width: 65%;
             margin: 0 auto;
         }
 
@@ -97,26 +98,26 @@
             margin-left: 4px;
         }
 
-        .main_index > .main_top_index > .main_middle_index > div > ul > li > input {
+        .main_index > .main_top_index > .main_middle_index > div > form > ul > li > input {
             width: 100%;
             height: 55px;
             font-size: 1.5rem;
         }
 
-        .main_index > .main_top_index > .main_middle_index > div > ul {
+        .main_index > .main_top_index > .main_middle_index > div > form > ul {
             position: relative;
         }
 
-        .main_index > .main_top_index > .main_middle_index > div > ul > .main_middle_search {
+        .main_index > .main_top_index > .main_middle_index > div > form > ul > .main_middle_search {
             position: absolute;
             top: 50%;
             right: 0;
-            width: 10%;
+            width: 8%;
             height: 51px;
             transform: translateY(-50%);
         }
 
-        .main_index > .main_top_index > .main_middle_index > div > ul > .main_middle_search > button {
+        .main_index > .main_top_index > .main_middle_index > div > form > ul > .main_middle_search > button {
             display: block;
             width: 100%;
             height: 100%;
@@ -132,10 +133,12 @@
 
         /* 하단 4개 탭 시작 */
         .main_index > .main_top_index > .main_bottom_index {
-            width: 100%;
+            width: 80%;
             height: 550px;
             position: absolute;
+            left: 50%;
             bottom: -710px;
+            transform: translateX(-50%);
             display: flex;
             justify-content: space-evenly;
         }
@@ -265,73 +268,73 @@
         .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > .main_subscription_subMenu > div:first-of-type {
             width: 100%;
             height: 0;
-            border-right: 5vw solid transparent;
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(121, 203, 196);
-            border-left: 5vw solid rgb(121, 203, 196);
+            border-right: 4vw solid transparent;
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(121, 203, 196);
+            border-left: 4vw solid rgb(121, 203, 196);
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > .main_notice_subMenu > div:first-of-type {
             width: 100%;
             height: 0;
-            border-right: 5vw solid transparent;
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(59, 189, 228);
-            border-left: 5vw solid rgb(59, 189, 228);
+            border-right: 4vw solid transparent;
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(59, 189, 228);
+            border-left: 4vw solid rgb(59, 189, 228);
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > .main_community_subMenu > div:first-of-type {
             width: 100%;
             height: 0;
-            border-right: 5vw solid transparent;
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(255, 162, 82);
-            border-left: 5vw solid rgb(255, 162, 82);
+            border-right: 4vw solid transparent;
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(255, 162, 82);
+            border-left: 4vw solid rgb(255, 162, 82);
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > .main_customer_service_subMenu > div:first-of-type {
             width: 100%;
             height: 0;
-            border-right: 5vw solid transparent;
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(237, 95, 107);
-            border-left: 5vw solid rgb(237, 95, 107);
+            border-right: 4vw solid transparent;
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(237, 95, 107);
+            border-left: 4vw solid rgb(237, 95, 107);
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > .main_subscription_subMenu > div:last-of-type {
             width: 100%;
             height: 0;
-            border-right: 5.1vw solid rgb(121, 203, 196);
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(121, 203, 196);
-            border-left: 5vw solid transparent;
+            border-right: 4.1vw solid rgb(121, 203, 196);
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(121, 203, 196);
+            border-left: 4vw solid transparent;
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > .main_notice_subMenu > div:last-of-type {
             width: 100%;
             height: 0;
-            border-right: 5.1vw solid rgb(59, 189, 228);
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(59, 189, 228);
-            border-left: 5vw solid transparent;
+            border-right: 4.1vw solid rgb(59, 189, 228);
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(59, 189, 228);
+            border-left: 4vw solid transparent;
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > .main_community_subMenu > div:last-of-type {
             width: 100%;
             height: 0;
-            border-right: 5.1vw solid rgb(255, 162, 82);
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(255, 162, 82);
-            border-left: 5vw solid transparent;
+            border-right: 4.1vw solid rgb(255, 162, 82);
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(255, 162, 82);
+            border-left: 4vw solid transparent;
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > .main_customer_service_subMenu > div:last-of-type {
             width: 100%;
             height: 0;
-            border-right: 5.1vw solid rgb(237, 95, 107);
-            border-bottom: 5vw solid transparent;
-            border-top: 5vw solid rgb(237, 95, 107);
-            border-left: 5vw solid transparent;
+            border-right: 4.1vw solid rgb(237, 95, 107);
+            border-bottom: 4vw solid transparent;
+            border-top: 4vw solid rgb(237, 95, 107);
+            border-left: 4vw solid transparent;
         }
 
         .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > div:last-of-type,
@@ -395,6 +398,11 @@
 
         /* index 끝 */
     </style>
+    <script type="text/javascript"
+        src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+        crossorigin="anonymous"></script>
+    <script async src="{% static 'js/index_search.js' %}"></script>
 </head>
 <body>
     <section class="main_index">
@@ -410,13 +418,15 @@
             <section class="main_middle_index">
                 <div>
                     <p>어떤 집정보를 찾고 계신가요?</p>
-                    <ul>
-                        <li>
-                            <input type="text">
-                            <datalist></datalist>
-                        </li>
-                        <li class="main_middle_search"><button type="submit"></button></li>
-                    </ul>
+                    <form action="{% url 'map:search' %}" method="get">
+                        <ul>
+                            <li>
+                                <input type="text" name="search_data" list="map_search_list">
+                                <datalist id="map_search_list"></datalist>
+                            </li>
+                            <li class="main_middle_search"><button type="submit"></button></li>
+                        </ul>
+                    </form>
                 </div>
             </section>
             <section class="main_bottom_index">

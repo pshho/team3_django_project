@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.forms import model_to_dict
 
-from map.models import SeouljRent, SeoulReal
+from .models import SeouljRent, SeoulReal
 
 
 # 지도 표시 html 보냄
@@ -18,8 +18,8 @@ def map_search(request):
         context = {}
         client_id = "Gr3DZKpSitjNw83linRK"
         client_secret = "CM1z5bCrQ6"
-        q = request.GET.get('q')
-        encText = urllib.parse.quote('{}'.format(q))
+        query = request.GET.get('query')
+        encText = urllib.parse.quote('{}'.format(query))
         sort = 'random'
         display = 5
 

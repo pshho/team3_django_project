@@ -164,12 +164,12 @@
         <section class="header-side-login">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'common:login' %}">
                         <span>로그인</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'common:signup' %}">
                         <span>회원가입</span>
                     </a>
                 </li>
@@ -178,12 +178,12 @@
         <section class="header-menu">
             <ul>
                 <li>
-                    <a href="{% url 'map:search' %}">
-                        <span>집찾기</span>
+                    <a href="{% url 'poll:index' %}">
+                        <span>메인</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'koreaCalendar:subCalendar' %}">
                         <span>청약</span>
                     </a>
                     <ul class="header-score">
@@ -192,18 +192,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'information:information' %}">
                         <span>알려드려요</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'community:free' %}">
                         <span>커뮤니티</span>
                     </a>
                     <ul>
                         <li><a href="{% url 'community:free' %}">자유게시판</a></li>
                         <li><a href="{% url 'review:review_jan' %}">거래후기 게시판</a></li>
-                        <li><a href="{% url 'interior:interior' %} ">인테리어 게시판</a></li>
+                        <li><a href="{% url 'interior:interior' %}">인테리어 게시판</a></li>
                         <li><a href="{% url 'news:news' %}">뉴스</a></li>
                     </ul>
                 </li>
@@ -213,7 +213,7 @@
                     </a>
                     <ul>
                         <li><a href="{% url 'notice:notice' %}">공지사항</a></li>
-                        <li><a href="#">소개</a></li>
+                        <li><a href="{% url 'introduction:introduction' %}">소개</a></li>
                     </ul>
                 </li>
             </ul>
