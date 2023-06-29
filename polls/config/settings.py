@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'introduction',
     'calculate',
     'map',
+    'common',
     'koreaCalendar',
 ]
 
@@ -135,3 +136,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 X_FRAME_OPTIONS = 'ALLOWALL' # iframe 제거 테스트
+
+LOGIN_REDIRECT_URL = '/' #로그인 성공시 루트로 이동
+LOGOUT_REDIRECT_URL = '/' #로그아웃 성공시 루트로 이동
