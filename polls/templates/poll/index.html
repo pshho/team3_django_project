@@ -395,6 +395,10 @@
 
         /* index 끝 */
     </style>
+    <script type="text/javascript"
+        src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+        crossorigin="anonymous"></script>
 </head>
 <body>
     <section class="main_index">
@@ -410,13 +414,15 @@
             <section class="main_middle_index">
                 <div>
                     <p>어떤 집정보를 찾고 계신가요?</p>
-                    <ul>
-                        <li>
-                            <input type="text">
-                            <datalist></datalist>
-                        </li>
-                        <li class="main_middle_search"><button type="submit"></button></li>
-                    </ul>
+                    <form action="{% url 'map:search' %}" method="get">
+                        <ul>
+                            <li>
+                                <input type="text" name="search_data">
+                                <datalist></datalist>
+                            </li>
+                            <li class="main_middle_search"><button type="submit"></button></li>
+                        </ul>
+                    </form>
                 </div>
             </section>
             <section class="main_bottom_index">

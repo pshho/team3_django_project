@@ -24,4 +24,5 @@ app_name = 'poll'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('', views.index_search, name='map_search'),
 ]
