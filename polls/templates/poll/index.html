@@ -396,125 +396,203 @@
         }
         /* 하단 4개 탭 메뉴 아이콘 끝 */
 
+       /* 바텀 card_list 시작  */
+       .slide_container{
+            width: 72.5%;
+            height: 650px;
+            position: absolute;
+            left: 50%;
+            bottom: -1450px;
+            transform: translateX(-50%);
+            background: #79cbc4;
+
+        }
+
+
+         .slide_wrapper{
+            position: relative;
+            width: 960px;
+            margin: 0 auto;
+            height: 300px;
+            bottom:0;
+            overflow: hidden;
+        }
+        .slides{
+            position: absolute;
+            left: 0; top: 0;
+            transition: left 0.5s ease-out;
+        }
+
+        .slides li:not(:last-child){
+            float: left;
+            margin-right: 30px;
+        }
+
+        .slide_wrapper .slides{
+            list-style: none;
+        }
+        .controls{
+            text-align: center;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+
+        .controls span{
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        /* 바텀 card_list 끝 */
+
         /* index 끝 */
     </style>
     <script type="text/javascript"
-        src="https://code.jquery.com/jquery-3.7.0.js"
-        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-        crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.7.0.js"
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+            crossorigin="anonymous"></script>
     <script async src="{% static 'js/index_search.js' %}"></script>
+    <script src="{% static 'js/slide.js' %}"></script>
 </head>
 <body>
-    <section class="main_index">
-        <section class="main_top_index">
-            <div class="main_logo"></div>
-            <a href="#"></a>
-            <div class="main_login_register">
-                <ul>
-                    {% if user.is_authenticated %}
-                    <li style="border-right: transparent;">
-                        <a href="{% url 'common:signout' %}">로그아웃</a>
-                    </li>
-                    {% else %}
-                    <li>
-                        <a href="{% url 'common:signin' %}">로그인</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'common:signup' %}">회원가입</a>
-                    </li>
-                    {% endif %}
+<section class="main_index">
+    <section class="main_top_index">
+        <div class="main_logo"></div>
+        <a href="#"></a>
+        <div class="main_login_register">
+            <ul>
+                {% if user.is_authenticated %}
+                <li style="border-right: transparent;">
+                    <a href="{% url 'common:signout' %}">로그아웃</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'common:signin' %}">로그인</a>
+                </li>
+                <li>
+                    <a href="{% url 'common:signup' %}">회원가입</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        <section class="main_middle_index">
+            <div>
+                <p>어떤 집정보를 찾고 계신가요?</p>
+                <form action="{% url 'map:search' %}" method="get">
+                    <ul>
+                        <li>
+                            <input type="text" name="search_data" list="map_search_list">
+                            <datalist id="map_search_list"></datalist>
+                        </li>
+                        <li class="main_middle_search"><button type="submit"></button></li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+        <section class="main_bottom_index">
+            <div class="main_subscription">
+                <div>
+                    <p>청약</p>
+                    <p>청약 일정과<br>점수를 확인해보세요</p>
+                </div>
+                <div class="main_subscription_menu">
+                    <p>청약</p>
+                    <div class="main_subscription_subMenu">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <p><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></p>
+                        <p><a href="{% url 'calculate:calculate' %}">청약 점수 조회</a></p>
+                    </div>
+                </div>
+                <div class="main_subscription_icon"></div>
+            </div>
+            <div class="main_notice">
+                <div>
+                    <p>알려드려요</p>
+                    <p>여러분이 놓친<br>부동산 정보 알아가세요</p>
+                </div>
+                <div class="main_notice_menu">
+                    <p>알려드려요</p>
+                    <div class="main_notice_subMenu">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <p><a href="{% url 'information:information' %}">알아두면 좋은 지식</a></p>
+                    </div>
+                </div>
+                <div class="main_notice_icon"></div>
+            </div>
+            <div class="main_community">
+                <div>
+                    <p>커뮤니티</p>
+                    <p>자유롭게 생생하게<br>인테리어까지</p>
+                </div>
+                <div class="main_community_menu">
+                    <p>커뮤니티</p>
+                    <div class="main_community_subMenu">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <p><a href="{% url 'community:free' %}">자유 게시판</a></p>
+                        <p><a href="{% url 'review:review_main' %}">거래후기 게시판</a></p>
+                        <p><a href="{% url 'interior:interior' %}">인테리어 게시판</a></p>
+                        <p><a href="{% url 'news:news' %}">뉴스 게시판</a></p>
+                    </div>
+                </div>
+                <div class="main_community_icon"></div>
+            </div>
+            <div class="main_customer_service">
+                <div>
+                    <p>고객서비스</p>
+                    <p>안녕하세요<br>여러분의 집집입니다</p>
+                </div>
+                <div class="main_customer_service_menu">
+                    <p>고객서비스</p>
+                    <div class="main_customer_service_subMenu">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <p><a href="{% url 'notice:notice' %}">공지사항</a></p>
+                        <p><a href="{% url 'introduction:introduction' %}">소개</a></p>
+                    </div>
+                </div>
+                <div class="main_customer_service_icon"></div>
+            </div>
+        </section>
+
+        <section class="slide_container">
+            <!-- css 설정은 바텀 card_list 시작 으로 메모했습니다 -->
+            <!-- 성호형님꺼 스타일이 조금 빡셋네요 섹션main_index안에  -->
+            <!-- main_top_index 안에 4개 요소를 쌓듯이 정렬해서 맞춰봣습니다 -->
+            <!-- cardlist가 li형태라서 맞춰봤어요 혹시 깨지면 말씀해주세요! -->
+
+            <div class="slide_wrapper">
+                <ul class="slides">
+
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
+                    <li><img src="http://via.placeholder.com/300x300" alt=""></li>
                 </ul>
             </div>
-            <section class="main_middle_index">
-                <div>
-                    <p>어떤 집정보를 찾고 계신가요?</p>
-                    <form action="{% url 'map:search' %}" method="get">
-                        <ul>
-                            <li>
-                                <input type="text" name="search_data" list="map_search_list">
-                                <datalist id="map_search_list"></datalist>
-                            </li>
-                            <li class="main_middle_search"><button type="submit"></button></li>
-                        </ul>
-                    </form>
-                </div>
-            </section>
-            <section class="main_bottom_index">
-                <div class="main_subscription">
-                    <div>
-                        <p>청약</p>
-                        <p>청약 일정과<br>점수를 확인해보세요</p>
-                    </div>
-                    <div class="main_subscription_menu">
-                        <p>청약</p>
-                        <div class="main_subscription_subMenu">
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div>
-                            <p><a href="{% url 'koreaCalendar:subCalendar' %}">청약 일정</a></p>
-                            <p><a href="{% url 'calculate:calculate' %}">청약 점수 조회</a></p>
-                        </div>
-                    </div>
-                    <div class="main_subscription_icon"></div>
-                </div>
-                <div class="main_notice">
-                    <div>
-                        <p>알려드려요</p>
-                        <p>여러분이 놓친<br>부동산 정보 알아가세요</p>
-                    </div>
-                    <div class="main_notice_menu">
-                        <p>알려드려요</p>
-                        <div class="main_notice_subMenu">
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div>
-                            <p><a href="{% url 'information:information' %}">알아두면 좋은 지식</a></p>
-                        </div>
-                    </div>
-                    <div class="main_notice_icon"></div>
-                </div>
-                <div class="main_community">
-                    <div>
-                        <p>커뮤니티</p>
-                        <p>자유롭게 생생하게<br>인테리어까지</p>
-                    </div>
-                    <div class="main_community_menu">
-                        <p>커뮤니티</p>
-                        <div class="main_community_subMenu">
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div>
-                            <p><a href="{% url 'community:free' %}">자유 게시판</a></p>
-                            <p><a href="{% url 'review:review_main' %}">거래후기 게시판</a></p>
-                            <p><a href="{% url 'interior:interior' %}">인테리어 게시판</a></p>
-                            <p><a href="{% url 'news:news' %}">뉴스 게시판</a></p>
-                        </div>
-                    </div>
-                    <div class="main_community_icon"></div>
-                </div>
-                <div class="main_customer_service">
-                    <div>
-                        <p>고객서비스</p>
-                        <p>안녕하세요<br>여러분의 집집입니다</p>
-                    </div>
-                    <div class="main_customer_service_menu">
-                        <p>고객서비스</p>
-                        <div class="main_customer_service_subMenu">
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div>
-                            <p><a href="{% url 'notice:notice' %}">공지사항</a></p>
-                            <p><a href="{% url 'introduction:introduction' %}">소개</a></p>
-                        </div>
-                    </div>
-                    <div class="main_customer_service_icon"></div>
-                </div>
-            </section>
+            <p class="controls">
+                <span class="prev"><<</span>
+                <span class="next">>></span>
+            </p>
+
+
         </section>
     </section>
+</section>
 </body>
 </html>
