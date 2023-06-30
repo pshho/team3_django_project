@@ -39,3 +39,6 @@ def index_search_list(request):
         return JsonResponse(results, safe=False)
 
     return redirect('poll/')
+
+def test_socal(request):
+    return render(request, 'poll/test.html')

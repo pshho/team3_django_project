@@ -6,5 +6,5 @@ app_name = 'koreaCalendar'
 
 urlpatterns = [
     path('', views.koreaCalendar, name='subCalendar'),  # 달력
-    path('koreaCalendar/calendar_iframe/<str:title>/', views.koreaCalendar_iframe, name='subCalendar_iframe'),  # 게시판 상세보기
+    path('koreaCalendar/calendar_iframe/<str:title>/', views.koreaCalendar_iframe, name='subCalendar_iframe'),
 ]
