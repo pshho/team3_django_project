@@ -228,3 +228,4 @@ async def koreaCalendar_iframe(request, title):
         return render(request, 'calendar/calendar_iframe.html', context)
 
     return render(request, 'calendar/calendar_iframe.html')
+

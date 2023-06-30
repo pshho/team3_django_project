@@ -48,6 +48,10 @@
     padding: 18px 12px 12px 12px;
 }
 
+.container > .login_logo_container > a:nth-of-type(2) > img {
+    padding: 19px 12px 12px 12px;
+}
+
 /* 로그인 버튼 */
 .container button {
     display: inline-block;
@@ -83,4 +87,40 @@
 .container p {
     font-size: 17px
 }
+
+/* 회원가입 로고 이미지 */
+.login_logo_container {
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login_logo_container > a {
+    display: block;
+    width: 33%;
+}
+
+.login_logo_container > a:first-child > img {
+    width: 55%;
+    height: 55%;
+}
+
+.login_logo_container > a > .social_image {
+    width: 45%;
+    height: 50%;
+}
+
+/*
+#naver_logo img{
+    width: 46px;
+    height: 43px;
+}
+
+#kakao_logo img{
+    width: 40px;
+    height: 40px;
+}
+*/
+
 

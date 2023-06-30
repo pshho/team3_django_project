@@ -34,4 +34,5 @@ urlpatterns = [
     path('map/', include('map.urls')),
     path('koreaCalendar/', include('koreaCalendar.urls')),
     path('common/', include('common.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
