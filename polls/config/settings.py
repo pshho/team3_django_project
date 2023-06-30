@@ -92,7 +92,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-SESSION_COOKIE_AGE = 60 # 30분 (30 * 60) # 소셜 세션 설정 60초후 초기화
+SESSION_COOKIE_AGE = 1800 # 30분 (30 * 60) # 소셜 세션 설정 60초후 초기화
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True # 소셜 세션 설정 창닫으면 초기화
 
 SITE_ID = 1

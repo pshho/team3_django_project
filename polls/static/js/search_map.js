@@ -24,6 +24,9 @@ var htmlMarker1 = {
     anchor: N.Point(20, 20)
 };
 
+// 마커 정보창
+var infoWindow = new naver.maps.InfoWindow({});
+
 // 마커 표시하고 숨기는 함수
 function updateMarkers(map, markers) {
 
@@ -152,9 +155,9 @@ function createMarker(lat, lng, iconUrl, text, text_list) {
 
     naver.maps.Event.addListener(marker, 'click', function() {
         // 정보창 생성
-        var infoWindow = new naver.maps.InfoWindow({
-            content: '<div style="display: inline-block; width: 200px; height: 50px; background: #f2f2f2; border: 2px solid #ddd; border-radius: 10px; color: #333; font-weight: bold; box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); text-align: center; vertical-align: middle; line-height: 50px;">' + text + '</div>', // 정보창에 표시할 내용
-            borderWidth: 0,
+        infoWindow.setContent('<div style="display: inline-block; width: 200px; height: 50px; background: #f2f2f2; border: 2px solid #ddd; border-radius: 10px; color: #333; font-weight: bold; box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); text-align: center; vertical-align: middle; line-height: 50px;">' + text + '</div>') // 정보창에 표시할 내용
+        infoWindow.setOptions({
+            borderWidth: 0
         });
 
         // 마커에 정보창 표시
@@ -527,11 +530,12 @@ $(document).ready(function() {
     // updateMarkers 스크롤 시 함수 실행
     naver.maps.Event.addListener(map, 'zoom_changed', function() {
         updateMarkers(map, all_markers);
-
+        infoWindow.close();
     });
 
     naver.maps.Event.addListener(map, 'dragend', function() {
         updateMarkers(map, all_markers);
+        infoWindow.close();
     });
 
 })

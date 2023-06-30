@@ -23,6 +23,10 @@
                     <li><a href="{% url 'review:review_subscription' %}" >청약</a></li>
                 </ul>
             </div>
+            <div>
+                <a href="{% url 'review:review_mama' %}">최신순</a>
+                <a href="{% url 'review:review_mama_recommend' %}">추천수</a>
+            </div>
             <div class="board_list">
                 <div class="top">
                     <div class="num">번호</div>
@@ -30,46 +34,63 @@
                     <div class="writer">글쓴이</div>
                     <div class="date">작성일</div>
                     <div class="count">조회</div>
+                    <div class="count">추천수</div>
                 </div>
 
+                {% for question in question_list %}
                 <div>
-                    <div class="num">7</div>
-                    <div class="title"><a href="view4.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2023.6.19</div>
-                    <div class="count">33</div>
+                    <div class="num">{{ question.id }}</div>
+                    <div class="title"><a href="{% url 'review:review_detail' question.id %}">{{ question.r_title }}</a></div>
+                    <div class="writer">{{ question.user }}</div>
+                    <div class="date">{{ question.r_regdate|date:"y-m-d" }}</div>
+                    <div class="count">{{ question.r_hit }}</div>
+                    <div class="count">{{ question.r_recommend }}</div>
                 </div>
-               
-                <div>
-                    <div class="num">5</div>
-                    <div class="title"><a href="view4.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2023.6.19</div>
-                    <div class="count">33</div>
-                </div>
-              
-               
-                <div>
-                    <div class="num">2</div>
-                    <div class="title"><a href="view2.html">글 제목이 들어갑니다.</a></div>
-                    <div class="writer">김이름</div>
-                    <div class="date">2023.6.19</div>
-                    <div class="count">33</div>
-                </div>
+                {% endfor %}
 
             </div>
 
-            <div class="board_page">
-               <a href="#" class="bt first"><<</a>
-               <a href="#" class="bt prev"><</a>
-               <a href="" class="num on">1</a>
-               <a href="" class="num">2</a>
-               <a href="" class="num">3</a>
-               <a href="" class="num">4</a>
-               <a href="" class="num">5</a>
-               
-               <a href="#" class="bt next">></a>
-               <a href="#" class="bt last">>></a>
+            <!-- 페이지 처리 영역 -->
+            <ul class="board_page">
+                <!-- 이전 페이지 -->
+                {% if question_list.has_previous %}
+                <li class="bt first">
+                    <a class="bt prev" href="?page={{ question_list.previous_page_number }}">◀</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="bt prev">◁</a>
+                </li>
+                {% endif %}
+
+                <!-- 현재 페이지 -->
+                {% for page_number in question_list.paginator.page_range %}
+                <!-- 현재 페이지와 리스트의 페이지가 일치하면 활성화함 -->
+                {% if question_list.number == page_number %}
+                <li class="page-item active">
+                    <a class="num">{{ page_number }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="num" href="?page={{ page_number }}">{{ page_number }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                <!-- 다음 페이지 -->
+                {% if question_list.has_next %}
+                <li class="page-item">
+                    <a class="bt last" href="?page={{ question_list.next_page_number }}">▶</a>
+                </li>
+                {% else %}
+                <!--이전 페이지가 없어도 적용됨-->
+                <li class="page-item disabled">
+                    <a class="bt last">▷</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="bt_wrap">
+                <a href="#" class="on">등록</a>
             </div>
 
         </div>

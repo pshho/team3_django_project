@@ -22,36 +22,38 @@
             <div class="board_view_wrap">
                 <div class="board_view">
                     <div class="title">
-                        글 제목이 들어갑니다.
+                        {{ review_board.r_title }}
                     </div>
                     <div class="info">
                         <dl>
                             <dt>번호</dt>
-                            <dd>1</dd>
+                            <dd>{{review_board.id}}</dd>
                         </dl>
                         <dl>
                             <dt>글쓴이</dt>
-                            <dd>김이름</dd>
+                            <dd>{{review_board.user}}</dd>
                         </dl>
+                        {% if review_board.r_modifydate %}
                         <dl>
                             <dt>작성일</dt>
-                            <dd>2021.1.16</dd>
+                            <dd>{{ review_board.r_regdate|date:"y-m-d"}}</dd>
                         </dl>
                         <dl>
+                            <dt>수정일</dt>
+                            <dd>{{ review_board.r_modifydate|date:"y-m-d"}}</dd>
+                        </dl>
+                        {% else %}
+                        <dl>
+                            <dt>작성일</dt>
+                            <dd>{{ review_board.r_regdate|date:"y-m-d"}}</dd>
+                        </dl>
+                        {% endif %}
+                        <dl>
                             <dt>조회</dt>
-                            <dd>33</dd>
+                            <dd>{{review_board.r_hit}}</dd>
                         </dl>
                     </div>
-                    <div class="cont">
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다
-                    </div>
+                    <div class="cont">{{review_board.r_content}}</div>
                 </div>
                 <div class="bt_wrap">
                     <a href="{% url 'review:review_main' %}" class="on">목록</a>
