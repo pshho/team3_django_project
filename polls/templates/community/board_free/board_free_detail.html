@@ -5,62 +5,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글테스트</title>
+    <title>게시글 상세보기</title>
     <link rel="stylesheet" href="{% static 'css/board/css.css' %}">
 </head>
 
 <body>
 {% include 'poll/sidebar.html' %}
 {% include 'poll/header.html' %}
-{% block content %}
-{% endblock %}
     <div class="board_wrap">
         <div class="board_title">
             <strong>게시글 상세 보기</strong>
-            <p>게시글 상세내용 조회.</p>
+            <p>게시글 상세내용 조회</p>
         </div>
 
         <div class="board_view_wrap">
-
             <div class="board_view_wrap">
                 <div class="board_view">
                     <div class="title">
-                        글 제목이 들어갑니다.
+                        {{ free_board.b_title }}
                     </div>
                     <div class="info">
                         <dl>
                             <dt>번호</dt>
-                            <dd>1</dd>
+                            <dd>{{free_board.id}}</dd>
                         </dl>
                         <dl>
                             <dt>글쓴이</dt>
-                            <dd>김이름</dd>
+                            <dd>{{free_board.user}}</dd>
                         </dl>
+                        {% if free_board.b_modifydate %}
                         <dl>
                             <dt>작성일</dt>
-                            <dd>2021.1.16</dd>
+                            <dd>{{ free_board.b_regdate|date:"y-m-d"}}</dd>
                         </dl>
                         <dl>
+                            <dt>수정일</dt>
+                            <dd>{{ free_board.b_modifydate|date:"y-m-d"}}</dd>
+                        </dl>
+                        {% else %}
+                        <dl>
+                            <dt>작성일</dt>
+                            <dd>{{ free_board.b_regdate|date:"y-m-d"}}</dd>
+                        </dl>
+                        {% endif %}
+                        <dl>
                             <dt>조회</dt>
-                            <dd>33</dd>
+                            <dd>{{free_board.b_hit}}</dd>
                         </dl>
                     </div>
-                    <div class="cont">
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다<br>
-                        글 내용이 들어갑니다
-                    </div>
+                    <div class="cont">{{free_board.b_content}}</div>
                 </div>
+                {% if free_board.user == request.user %}
                 <div class="bt_wrap">
                     <a href="{% url 'community:free' %}" class="on">목록</a>
-                    <a href="{% url 'community:update' %}">수정</a>
+                    <a href="{% url 'community:update' free_board.id %}">수정</a>
                 </div>
+                {% endif %}
             </div>
+        </div>
+        <div style="height: 200px; font-size: 2rem;">
+            {{ answers_list.count }}
+            {% for ans in answers_list %}
+            <p>{{ ans.content }}</p>
+            <p>{{ ans.author }}</p>
+            {% endfor %}
+        </div>
+        <section>
+            <h2>댓글 등록</h2>
+            <form action="{% url 'community:comment_create' free_board.id %}" method="post">
+                {% csrf_token %}
+                <textarea name="content" rows="10"></textarea>
+                <button type="submit">저장하기</button>
+            </form>
+        </section>
+
     </div>
 </body>
 
