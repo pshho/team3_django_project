@@ -16,5 +16,14 @@ urlpatterns = [
 
     path('<int:review_board_id>/', views.review_detail, name='review_detail'), # 거래후기보기
 
-    path('review_wirte/', views.review_write, name='write')
+    path('review/<int:review_board_id>/', views.comment_create, name='comment_create'), # 댓글생성
+    path('comment_update/<int:comment_id>',views.comment_update,name='comment_update'), # 댓글 수정
+    path('comment_delete/<int:comment_id>',views.comment_delete,name='comment_delete'), # 댓글 삭제
+
+    path('review_delete/<int:comment_id>',views.review_delete, name='review_delete'), # 게시판 삭제
+    path('review_update/<int:review_board_id>',views.review_update, name='review_update'), # 게시판 수정
+
+    path('review_wirte/', views.review_write, name='write'),
+
+    path('review/<int:review_board_id>/', views.review_detail, name='review_detail'),
 ]
