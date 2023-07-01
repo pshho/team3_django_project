@@ -21,8 +21,9 @@
             <div class="main_login_register">
                 <ul>
                     {% if user.is_authenticated %}
-                    <li style="border-right: transparent;">
+                    <li style="border-right: transparent;" class="logmy">
                         <a href="{% url 'common:signout' %}">로그아웃</a>
+                        <a href="#" class="mypage_view">(마이)<iframe src="{% url 'common:mypage' %}" target="_self"></iframe></a>
                     </li>
                     {% else %}
                     <li>

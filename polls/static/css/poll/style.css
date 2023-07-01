@@ -797,11 +797,60 @@ ul > li {
     padding: 10px 20px;
     margin: 0 10px;
 }
-
-
-
-
 /* 바텀 card_list 끝 */
+
+/* header 마이페이지 */
+.header-side-login > ul > li > .mypage_view {
+    position: relative;
+}
+
+.header-side-login > ul > li > .mypage_view:hover > iframe {
+    visibility: visible;
+    transition: 1s ease-in-out;
+}
+
+.header-side-login > ul > li > .mypage_view > iframe {
+    width: 250px;
+    height: 130px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 999;
+    visibility: hidden;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.main_index > .main_top_index > .main_login_register > ul > .logmy {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_index > .main_top_index > .main_login_register > ul > .logmy > a:first-of-type {
+    width: 35%;
+}
+
+.main_index > .main_top_index > .main_login_register > ul > li > .mypage_view {
+    position: relative;
+    width: 25%;
+}
+
+.main_index > .main_top_index > .main_login_register > ul > li > .mypage_view:hover > iframe {
+    visibility: visible;
+    transition: 1s ease-in-out;
+}
+
+.main_index > .main_top_index > .main_login_register > ul > li > .mypage_view > iframe {
+    width: 250px;
+    height: 130px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    z-index: 999;
+    visibility: hidden;
+    border: 1px solid #ccc;
+    outline: none;
+}
 
 
 /* index 끝 */

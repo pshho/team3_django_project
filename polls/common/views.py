@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
 from django.shortcuts import render, redirect
@@ -57,9 +58,6 @@ def signout(request):
     logout(request)
     return redirect('/')
 
-
-
-
 def extract_text_from_image(image_file):
     # 이미지 열기
     image = Image.open(image_file)
@@ -69,3 +67,14 @@ def extract_text_from_image(image_file):
 
     # 추출된 텍스트 반환
     return text
+
+# 마이 페이지
+def mypage(request):
+    req = request.user.username
+    user = User.objects.get(username=req)
+
+    context = {
+        'user': user,
+    }
+
+    return render(request, 'common/mypage.html', context)
