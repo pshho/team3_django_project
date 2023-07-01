@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 app_name = 'review'
@@ -14,4 +15,5 @@ urlpatterns = [
     path('review_subscription_recommend/', views.review_list_subscription_recommend, name='review_subscription_recommend'), # 거래후기청약
     path('<int:review_board_id>/', views.review_detail, name='review_detail'), # 거래후기보기
 
+    path('review_wirte/', views.review_write, name='write')
 ]
