@@ -1,6 +1,6 @@
 from django import forms
 
-from community.models import Answer, Free_Board
+from .models import Answer, Free_Board
 
 class FreeForm(forms.ModelForm):
     class Meta:

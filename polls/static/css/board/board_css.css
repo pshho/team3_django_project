@@ -11,6 +11,7 @@ a{text-decoration: none;color: initial;}
     width: 1000px;
     margin: 100px auto;
     text-align: center;
+    font-family: GangwonEdu_OTFBoldA;
     /* background-color: aquamarine; */
 }
 /* ####  board_wrap : 게시판 가장 부모영역 가장외곽 영역 #### */
@@ -29,7 +30,7 @@ a{text-decoration: none;color: initial;}
 
 html{
     /* 폰트사이즈를 10으로 줫기때문에 3*10해서 30px이됨(바로위 strong값) */
-    font-size: 10px;
+
     /* em은 뭐가다른가요?? 안알랴줌 */
     /* 근본원인은 */
     /* 시간없으면 1:00~1:20만 후딱보세요 */
@@ -38,7 +39,7 @@ html{
 
 .board_title p{
     margin-top: 5px;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 /* 조회수 추천수 */
 .board_title_takes{
@@ -78,7 +79,7 @@ html{
 /* 각각의 칸 설정 */
 .board_list > div > div{
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 16px;
     text-align: center;
     vertical-align: middle;
     padding: 15px 0;
@@ -153,7 +154,7 @@ html{
 
 .board_page a.num{
     padding-top: 10px;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 /*  a태그이면서 num에 클래스이면서 on에 클래스인 요론느낌 */
@@ -175,20 +176,26 @@ html{
 .bt_wrap{
     margin-top: 30px;
     text-align: center;
-}
 
+}
+.bt_wrap button,
 .bt_wrap a{
     display: inline-block;
     min-width: 80px;
     padding: 10px;
     border: 1px solid #000;
     border-radius: 2px;
-    font-size: 1.4rem;
+    font-size: 16px;
+}
+
+.bt_wrap button{
+ padding: 10px 40px;
+ font-family: GangwonEdu_OTFBoldA;
 }
 
 .bt_wrap a:first-child{margin-left: 0;}
 
-
+.bt_wrap button,
 .bt_wrap a.on{
     background-color: #000;
     color: #fff;
@@ -249,7 +256,7 @@ html{
 .board_view .info dl dt,
 .board_view .info dl dd {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 
@@ -263,7 +270,7 @@ html{
     padding: 15px;
     border-bottom: 1px solid #000;
     line-height: 160%;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 /* 댓글 기능 */
@@ -288,25 +295,28 @@ html{
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.recommendation_button button {
+
+/* 커스텀 버튼 */
+.custombutton{
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    float: right;
 }
-
-.recommendation_button button:hover {
+.custombutton:hover{
     background-color: #555;
 }
+
 
 
 
@@ -349,7 +359,7 @@ html{
 .board_write .info dd{
     display: inline-block;
     vertical-align: middle;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 .board_write .title dt,
@@ -384,3 +394,10 @@ html{
 }
 
 /* #### .board_write : 게시글 작성영역 ##### */
+
+/* answer_wrap : 답글 영역 */
+
+.answer_wrap{
+    padding-top: 60px;
+}
+/* #### answer_wrap : 답글 영역 ##### */

@@ -23,7 +23,7 @@
                     <li><a href="{% url 'review:review_subscription' %}" >청약</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="board_title_takes">
                 <a href="{% url 'review:review_main' %}">최신순</a>
                 <a href="{% url 'review:review_recommend' %}">추천수</a>
             </div>
@@ -34,7 +34,8 @@
                     <div class="writer">글쓴이</div>
                     <div class="date">작성일</div>
                     <div class="count">조회</div>
-                    <div class="count">추천수</div>
+                    <div class="recommend">추천수</div>
+                    <div class="division">구분</div>
                 </div>
 
                 {% for question in question_list %}
@@ -44,7 +45,8 @@
                     <div class="writer">{{ question.user }}</div>
                     <div class="date">{{ question.r_regdate|date:"y-m-d" }}</div>
                     <div class="count">{{ question.r_hit }}</div>
-                    <div class="count">{{ question.r_recommend }}</div>
+                    <div class="recommend">{{ question.r_recommend }}</div>
+                    <div class="division">{{question.r_type}}</div>
                 </div>
                 {% endfor %}
             </div>
@@ -89,7 +91,7 @@
                 {% endif %}
             </ul>
             <div class="bt_wrap">
-                <a href="#" class="on">등록</a>
+                <a href="{% url 'review:write' %}" class="on">등록</a>
             </div>
         </div>
     </div>

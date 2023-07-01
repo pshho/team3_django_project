@@ -4,8 +4,8 @@ from django.http import request, JsonResponse
 from django.shortcuts import render, redirect,get_object_or_404
 from django.utils import timezone
 
-from community.forms import FreeForm, AnswerForm
-from community.models import Free_Board, Answer
+from .forms import FreeForm, AnswerForm
+from .models import Free_Board, Answer
 
 def board_free(request):
     question_list = Free_Board.objects.order_by('-b_regdate')
@@ -47,19 +47,19 @@ def board_free_write(request):
     if request.method == "POST":
         form = FreeForm(request.POST)
 
-        if form.is_valid():  # 폼이 유효성 검사를 통과했다면
+        if form.is_valid():
             free = form.save(commit=False)
             free.user = request.user
             free.b_regdate = timezone.now()
-            form.save()
+            free.save()
 
             return redirect('community:free')
     else:
         form = FreeForm()
 
-    context = {'form': form}
+    context = {'form': form, 'free_board': {'user': request.user, 'b_regdate': timezone.now()}}
 
-    return render(request, 'community/board_free/board_free_write.html',context) # 게시판 작성
+    return render(request, 'community/board_free/board_free_write.html', context) # 게시판 작성
 
 
 def comment_create(request, free_board_id):
@@ -102,3 +102,16 @@ def board_free_update(request, free_board_id):
 
     context = {'form': form, 'free_board':free_board}
     return render(request, 'community/board_free/board_free_update.html', context) # 게시판 수정
+
+@login_required(login_url='community:signin')
+def board_free_delete(request, free_board_id):
+    free_board = get_object_or_404(Free_Board, pk=free_board_id)
+    free_board.delete()
+    return redirect('community:free') #게시글 삭제
+
+
+@login_required(login_url='community:signin')
+def comment_delete(request, comment_id):
+    comment = get_object_or_404(Answer, pk=comment_id)
+    comment.delete()
+    return redirect('community:detail', free_board_id=comment.board_id)
