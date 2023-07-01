@@ -25,6 +25,7 @@ def index_search(request):
         return JsonResponse(context)
     return render(request, 'poll/index.html')
 
+
 def index_search_list(request):
     if request.method == 'GET':
         seoul_rent = SeouljRent.objects.all()

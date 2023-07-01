@@ -77,16 +77,31 @@ def review_list_subscription_recommend(request):
     context = {'question_list': text}
     return render(request, 'review/review_list_mama.html', context)
 
-def review_detail(request, review_board_id):
+
+#########################      함수시작영역  ############################################
+
+
+def review_detail(request, review_board_id): # 게시글 상세보기
     review_board = get_object_or_404(Review_Board, id=review_board_id)
-    review_board.r_hit += 1
-    review_board.save()
+
+
+    # 게시글 추천 테스트
+    if request.method == 'POST':
+        # 게시글 추천처리
+        review_board.r_recommend += 1
+        review_board.save()
+        return redirect('review:review_detail', review_board_id=review_board_id)
+    else:
+        review_board.r_hit += 1
+        review_board.save()
 
     # AnswerForm과 연관된 데이터 필터링
     answers_list = Answer_Review.objects.filter(board_id=review_board_id)
 
     context = {'review_board': review_board, 'answers_list':answers_list}
     return render(request, 'review/review_detail.html', context)
+
+
 
 def review_write(request): # 게시글 작성
     if request.method == "POST":

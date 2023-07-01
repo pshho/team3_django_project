@@ -27,8 +27,6 @@ def board_free_recommend(request):
 
 def board_free_detail(request, free_board_id):
     free_board = get_object_or_404(Free_Board, id=free_board_id)
-    free_board.b_hit += 1
-    free_board.save()
 
     # 게시글 추천 테스트
     if request.method == 'POST':
@@ -36,6 +34,9 @@ def board_free_detail(request, free_board_id):
         free_board.b_recommend += 1
         free_board.save()
         return redirect('community:detail', free_board_id=free_board_id)
+    else:
+        free_board.b_hit += 1
+        free_board.save()
 
     # AnswerForm과 연관된 데이터 필터링
     answers_list = Answer.objects.filter(board_id=free_board_id)
@@ -115,5 +116,20 @@ def comment_delete(request, comment_id):
     comment = get_object_or_404(Answer, pk=comment_id)
     comment.delete()
     return redirect('community:detail', free_board_id=comment.board_id) # 댓글 삭제
+
+@login_required(login_url='community:signin')
+def comment_update(request, comment_id):
+    comment = get_object_or_404(Answer, pk=comment_id)
+    if request.method == 'POST':
+        form = AnswerForm(request.POST, instance=comment)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.save()
+            return redirect('community:detail', free_board_id=comment.board_id)
+    else:
+        form = AnswerForm(instance=comment)
+    context = {'form': form}
+    return render(request, 'community/board_free/board_free_comment_update.html', context)
 
 

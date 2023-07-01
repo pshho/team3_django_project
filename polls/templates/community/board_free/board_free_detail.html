@@ -68,12 +68,13 @@
             </div>
 
         </div>
-        <div style="height: 200px; font-size: 2rem;" class="answer_wrap">
+        <div style="" class="answer_wrap">
             {{ answers_list.count }}개의 답변이 있습니다
             {% for ans in answers_list %}
             <div class="comment">
                 {% if ans.author == request.user %}
                     <button class="custombutton delete" data-uri="{% url 'community:comment_delete' ans.id %}">삭제</button>
+                    <button class="custombutton delete" data-uri="{% url 'community:comment_update' ans.id %}">수정</button>
                 {% endif %}
                 <p>작성자: {{ ans.author }}</p>
                 <p>{{ ans.content }}</p>
@@ -92,7 +93,7 @@
 
             <form class="comment-form" action="{% url 'community:comment_create' free_board.id %}" method="post">
                 {% csrf_token %}
-                <textarea name="content" rows="10"></textarea>
+                <textarea name="content" rows="10" required></textarea>
                 <button type="submit" class="custombutton">저장하기</button>
 
             </form>
@@ -121,7 +122,7 @@
       $(document).ready(function(){
             $('.delete').click(function(e){  //삭제 버튼을 클릭하면
                 e.preventDefault();  // 기본 동작인 링크 이동을 중지합니다.
-                if(confirm('정말 삭제하시겠습니까?')){
+                if(confirm('정말 수정/삭제하시겠습니까?')){
                     location.href=$(this).data('uri'); //현재 대상 객체의 주소를 이동
                 }
             });
