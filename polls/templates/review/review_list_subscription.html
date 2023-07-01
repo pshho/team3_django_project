@@ -20,10 +20,10 @@
                     <li><a href="{% url 'review:review_main' %}">전체</a></li>
                     <li><a href="{% url 'review:review_jan' %}" >전/월세</a></li>
                     <li><a href="{% url 'review:review_mama' %}" >매매</a></li>
-                    <li><a href="{% url 'review:review_subscription' %}" >청약</a></li>
+                    <li><a href="{% url 'review:review_subscription' %}" class="active">청약</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="board_title_takes">
                 <a href="{% url 'review:review_subscription' %}">최신순</a>
                 <a href="{% url 'review:review_subscription_recommend' %}">추천수</a>
             </div>

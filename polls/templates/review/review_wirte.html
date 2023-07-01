@@ -37,7 +37,7 @@
                     <dl>
                         <dt>제목</dt>
                         <input type="text" name="r_title" id="r_title"
-                               value="{{ form.r_title.value|default_if_none:'' }}" placeholder="제목 입력">
+                               value="{{ form.r_title.value|default_if_none:'' }}" placeholder="제목 입력" required>
                     </dl>
                 </div>
                 <div class="info">
@@ -62,7 +62,7 @@
                 </div>
                 <div class="cont">
                     <label for="r_content"><label>
-                        <textarea name="r_content" id="r_content" rows="10" placeholder="내용입력">{{form.r_content.value|default_if_none:''}}</textarea>
+                        <textarea name="r_content" id="r_content" rows="10" placeholder="내용입력" required>{{form.r_content.value|default_if_none:''}}</textarea>
                 </div>
             </div>
             <div class="bt_wrap">

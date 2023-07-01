@@ -175,7 +175,7 @@ html{
 
 /* bt_wrap : 목록 수정 영역*/
 .bt_wrap{
-    margin-top: 30px;
+    margin-top: 60px;
     text-align: center;
 
 }
@@ -272,6 +272,7 @@ html{
     border-bottom: 1px solid #000;
     line-height: 160%;
     font-size: 16px;
+    text-align:left;
 }
 
 /* 댓글 기능 */
@@ -305,7 +306,8 @@ html{
 
 /* 커스텀 버튼 */
 .custombutton{
-    padding: 10px 20px;
+    width: 11%;
+    height: 40px;
     background-color: #333;
     color: #fff;
     font-size: 16px;
