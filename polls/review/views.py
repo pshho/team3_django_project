@@ -1,7 +1,9 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.utils import timezone
 
-from review.models import Review_Board, Answer_Review
+from .forms import FreeForm
+from .models import Review_Board, Answer_Review
 
 def review_list_main(request):
     question_list = Review_Board.objects.order_by('-r_regdate')
@@ -28,7 +30,7 @@ def review_list_jan(request):
     text = paginator.get_page(page)
 
     context = {'question_list': text}
-    return render(request, 'review/review_list_jan.html', context)
+    return render(request, 'review/review_list_jan.html', context) #전세게시판
 
 def review_list_jan_recommend(request):
     question_list = Review_Board.objects.filter(r_type='전/월세').order_by('-r_recommend')
@@ -85,3 +87,20 @@ def review_detail(request, review_board_id):
 
     context = {'review_board': review_board, 'answers_list':answers_list}
     return render(request, 'review/review_detail.html', context)
+
+def review_write(request): # 게시글 작성
+    if request.method == "POST":
+        form = FreeForm(request.POST)
+
+        if form.is_valid():
+            free = form.save(commit=False)
+            free.user = request.user
+            free.r_regdate = timezone.now()
+            free.save()
+
+            return redirect('review:review_main')
+    else:
+        form = FreeForm()
+
+    context = {'form': form, 'free_board': {'user': request.user, 'r_regdate': timezone.now()}}
+    return render(request, 'review/review_wirte.html', context) # 게시판 작성

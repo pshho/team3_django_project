@@ -14,16 +14,18 @@
         </section>
         <section class="header-side-login">
             <ul>
+              {% if user.is_authenticated %}
+                <li style="border-right: transparent;">
+                    <a href="{% url 'common:signout' %}">로그아웃</a>
+                </li>
+                {% else %}
                 <li>
-                    <a href="{% url 'common:signin' %}">
-                        <span>로그인</span>
-                    </a>
+                    <a href="{% url 'common:signin' %}">로그인</a>
                 </li>
                 <li>
-                    <a href="{% url 'common:signup' %}">
-                        <span>회원가입</span>
-                    </a>
+                    <a href="{% url 'common:signup' %}">회원가입</a>
                 </li>
+                {% endif %}
             </ul>
         </section>
         <section class="header-menu">

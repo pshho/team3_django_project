@@ -108,7 +108,7 @@ a{text-decoration: none;color: initial;}
 
 html{
     /* 폰트사이즈를 10으로 줫기때문에 3*10해서 30px이됨(바로위 strong값) */
-    font-size: 10px;
+    
     /* em은 뭐가다른가요?? 안알랴줌 */
     /* 근본원인은 */
     /* 시간없으면 1:00~1:20만 후딱보세요 */
@@ -117,7 +117,7 @@ html{
 
 .board_title p{
     margin-top: 5px;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 /* #### .board_title : 게시판 제목영역 #### */
 
@@ -151,7 +151,7 @@ html{
 /* 각각의 칸 설정 */
 .board_list > div > div{
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 16px;
     text-align: center;
     vertical-align: middle;
     padding: 15px 0;
@@ -165,7 +165,7 @@ html{
     width: 10%;
 }
 .board_list .title{
-    width: 60%;
+    width: 40%;
     text-align: left;
 }
 
@@ -181,14 +181,23 @@ html{
     width: 10%;
 }
 
+.board_list .recommend{
+    width: 10%;
+}
+
+.board_list .division{
+    width: 10%;
+}
+
 /* #### board_list : 게시판 내용 #### */
 
 
 /* board_page : 게시글 버튼영역  */
 .board_page{
     margin-top: 30px;
-    text-align: center;
-
+    flex: 1;
+    display: flex;
+    justify-content: center;
     /* 부모가 font-size0이다 감오쥬? */
     /* 자식 요소 수평배치할려고 하는거쥬? */
     font-size: 0;
@@ -213,14 +222,15 @@ html{
 }
 
 .board_page a.bt{
-    padding-top: 10px;
+    padding: 10px 10px;
     font-size: 1.2rem;
     letter-spacing: -1px;
 }
 
 .board_page a.num{
-    padding-top: 10px;
-    font-size: 1.4rem;
+    text-align: center;
+    padding: 10px 5px;
+    font-size: 16px;
 }
 
 /*  a태그이면서 num에 클래스이면서 on에 클래스인 요론느낌 */
@@ -235,32 +245,36 @@ html{
     border-left: 1px solid #ddd;
 }
 
-
 /* #### board_page : 게시글 버튼영역 #### */
 
 /* bt_wrap : 목록 수정 영역*/
 .bt_wrap{
     margin-top: 30px;
     text-align: center;
-}
 
+}
+.bt_wrap button,
 .bt_wrap a{
     display: inline-block;
     min-width: 80px;
     padding: 10px;
     border: 1px solid #000;
     border-radius: 2px;
-    font-size: 1.4rem;
+    font-size: 16px;
+}
+
+.bt_wrap button{
+ padding: 10px 40px;
+ font-family: GangwonEdu_OTFBoldA;
 }
 
 .bt_wrap a:first-child{margin-left: 0;}
 
-
+.bt_wrap button,
 .bt_wrap a.on{
     background-color: #000;
     color: #fff;
 }
-
 
 /* ####   bt_wrap : 목록 수정 영역   #### */
 
@@ -316,7 +330,7 @@ html{
 .board_view .info dl dt,
 .board_view .info dl dd {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 
@@ -330,7 +344,7 @@ html{
     padding: 15px;
     border-bottom: 1px solid #000;
     line-height: 160%;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 
@@ -360,9 +374,9 @@ html{
 
 .board_write .info dl{
     display: inline-block;
-    width: 50%;
+    width: 33.3%;
     vertical-align: middle;
-   
+
 }
 
 
@@ -373,7 +387,7 @@ html{
 .board_write .info dd{
     display: inline-block;
     vertical-align: middle;
-    font-size: 1.4rem;
+    font-size: 16px;
 }
 
 .board_write .title dt,
@@ -388,13 +402,13 @@ html{
 
 .board_write .title dl{
     font-size: 0;
-} 
+}
 
 .board_write .title input[type="text"]{
     width: 80%;
     padding: 10px;
     box-sizing: border-box;
- 
+
 }
 
 .board_write .cont textarea{
