@@ -16,9 +16,7 @@ a{text-decoration: none;color: initial;}
 /* ####  board_wrap : 게시판 가장 부모영역 가장외곽 영역 #### */
 
 /* .board_title : 게시판 제목영역 */
-.board_title{
-    margin-bottom: 30px;
-}
+
 
 .board_title strong{
     /* 짤막상식 em과 rem 차이는 */
@@ -42,6 +40,12 @@ html{
     margin-top: 5px;
     font-size: 1.4rem;
 }
+/* 조회수 추천수 */
+.board_title_takes{
+    text-align: right;
+    font-size: 15px;
+}
+
 /* #### .board_title : 게시판 제목영역 #### */
 
 /* board_list : 게시판 내용 */
@@ -88,7 +92,7 @@ html{
     width: 10%;
 }
 .board_list .title{
-    width: 60%;
+    width: 40%;
     text-align: left;
 }
 
@@ -104,14 +108,20 @@ html{
     width: 10%;
 }
 
+.board_list .recommend{
+    width: 10%;
+}
+
+
 /* #### board_list : 게시판 내용 #### */
 
 
 /* board_page : 게시글 버튼영역  */
 .board_page{
     margin-top: 30px;
-    text-align: center;
-
+    flex: 1;
+    display: flex;
+    justify-content: center;
     /* 부모가 font-size0이다 감오쥬? */
     /* 자식 요소 수평배치할려고 하는거쥬? */
     font-size: 0;
@@ -255,6 +265,49 @@ html{
     line-height: 160%;
     font-size: 1.4rem;
 }
+
+/* 댓글 기능 */
+.comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    text-align: initial;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.recommendation_button button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.recommendation_button button:hover {
+    background-color: #555;
+}
+
 
 
 
