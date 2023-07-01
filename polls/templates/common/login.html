@@ -57,7 +57,8 @@
         <p>집집에 오신 걸 환영합니다.<br>알뜰 부동산 정보 사이트 집집입니다.</p>
         <button id="signinup_button2" class="signinup_button">로그인</button>
     </section>
-    <iframe src="{% url 'common:signup' %}"></iframe>
+    <div id="signup_data"></div>
+    <!--<iframe src="{% url 'common:signup' %}"></iframe>-->
 </section>
 <script>
     $(document).ready(function() {
@@ -89,6 +90,35 @@
                 'left': '50%',
                 'transition': '1.2s ease-in-out'
             });
+        });
+
+        $.ajax({
+            url: '{% url 'common:signup' %}',
+            type: 'GET',
+            success: function(data) {
+                $('#signup_data').html(data);
+
+                $('#signup_data').on('submit', '#signup_form', function(e) {
+                    e.preventDefault();
+                    // 폼 데이터 가져오기
+                    var formData = $(this).serialize();
+                    // 회원가입 폼 데이터 전송
+                    $.ajax({
+                        url: '{% url 'common:signup' %}',
+                        type: 'POST',
+                        data: formData,
+                        success: function(response) {
+                            window.location.href = "{% url 'poll:index' %}";
+                        },
+                        error: function() {
+                            console.log('회원가입 실패');
+                        }
+                    });
+                });
+            },
+            error: function() {
+                console.log('Error occurred during AJAX request.');
+            }
         });
     });
 </script>
