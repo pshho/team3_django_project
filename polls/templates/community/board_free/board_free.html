@@ -17,8 +17,8 @@
 <div class="board_wrap">
     <div class="board_title">
         <strong>자유게시판</strong>
-        <div>
-            <a href="{% url 'community:free' %}">최신순</a>
+        <div class="board_title_takes">
+            <a href="{% url 'community:free' %}">최신순</a> |
             <a href="{% url 'community:free_recommend' %}">추천수</a>
         </div>
     </div>
@@ -85,9 +85,19 @@
             </li>
             {% endif %}
         </ul>
-        <div class="bt_wrap">
-            <a href="{% url 'community:write' %}" class="on">등록</a>
+
+       <div class="bt_wrap">
+        <!--로그인 안되면 로그인시 이용가능하게 설정 -->
+        {% if user.is_authenticated %}
+
+        <a href="{% url 'community:write' %}" class="on">등록</a>
+        {% else %}
+        <a href="{% url 'common:signin' %}" class="on">로그인시 이용가능</a>
+        {% endif %}
         </div>
+
+
+
     </div>
 </div>
 
