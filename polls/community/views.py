@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.http import request
+from django.http import request, JsonResponse
 from django.shortcuts import render, redirect,get_object_or_404
 from django.utils import timezone
 
@@ -29,6 +29,13 @@ def board_free_detail(request, free_board_id):
     free_board = get_object_or_404(Free_Board, id=free_board_id)
     free_board.b_hit += 1
     free_board.save()
+
+    # 게시글 추천 테스트
+    if request.method == 'POST':
+        # 게시글 추천처리
+        free_board.b_recommend += 1
+        free_board.save()
+        return redirect('community:detail', free_board_id=free_board_id)
 
     # AnswerForm과 연관된 데이터 필터링
     answers_list = Answer.objects.filter(board_id=free_board_id)
