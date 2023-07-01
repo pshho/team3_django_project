@@ -1,8 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from .forms import FreeForm
+from .forms import FreeForm, AnswerForm
 from .models import Review_Board, Answer_Review
 
 def review_list_main(request):
@@ -118,4 +119,84 @@ def review_write(request): # 게시글 작성
         form = FreeForm()
 
     context = {'form': form, 'free_board': {'user': request.user, 'r_regdate': timezone.now()}}
-    return render(request, 'review/review_wirte.html', context) # 게시판 작성
+    return render(request, 'review/review_write.html', context) # 게시판 작성
+
+def comment_create(request, review_board_id):
+    # 댓글 등록
+    review_board = get_object_or_404(Review_Board, pk=review_board_id)
+
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user  # 세션
+            comment.create_date = timezone.now()
+            comment.question = review_board
+            comment.board_type = 'Review_Board'
+            comment.board_id = review_board.pk
+            comment.save()
+            return redirect('review:review_detail',review_board_id=review_board_id)
+    else:
+        form=AnswerForm
+    context = {'review_board' : review_board, 'form' : form}
+    return render(request, 'review/review_detail.html',context)
+
+
+@login_required(login_url='community:signin')
+def comment_delete(request, comment_id):
+    comment = get_object_or_404(Answer_Review, pk=comment_id)
+    comment.delete()
+    return redirect('review:review_detail', review_board_id=comment.board_id) # 댓글 삭제
+
+
+@login_required(login_url='community:signin')
+def comment_update(request, comment_id):
+    comment = get_object_or_404(Answer_Review, pk=comment_id)
+    if request.method == 'POST':
+        form = AnswerForm(request.POST, instance=comment)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.save()
+            return redirect('review:review_detail', review_board_id=comment.board_id)
+
+    else:
+        form = AnswerForm(instance=comment)
+    context = {'form': form}
+    return render(request, 'review/review_comment_update.html', context) # 댓글 수정
+
+# 게시판 삭제
+@login_required(login_url='community:signin')
+def review_delete(request, comment_id):
+    comment = get_object_or_404(Review_Board, pk=comment_id)
+    comment.delete()
+    return redirect('review:review_main')
+
+# 게시판 수정
+
+# views.py
+
+@login_required(login_url='community:signin')
+def review_update(request, review_board_id):
+    review_board = get_object_or_404(Review_Board, pk=review_board_id)
+
+    if request.method == "POST":
+        form = FreeForm(request.POST, instance=review_board)
+
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.r_modifydate = timezone.now()
+            review.user = request.user
+            review.save()
+
+            return redirect('review:review_detail', review_board_id=review_board_id)
+    else:
+        form = FreeForm(instance=review_board)
+
+    context = {'form': form, 'review_board': review_board}
+    return render(request, 'review/review_update.html', context)
+
+
+
+
+

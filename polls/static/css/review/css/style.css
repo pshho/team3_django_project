@@ -362,6 +362,34 @@ html{
     text-align:left;
 }
 
+/* 댓글 기능 */
+.comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    text-align: initial;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 /* 커스텀 버튼 */
 .custombutton{
     width: 11%;
@@ -378,7 +406,6 @@ html{
 .custombutton:hover{
     background-color: #555;
 }
-
 
 /* #### .board_view : 게시글 보여지는 영역 #### */
 
@@ -453,3 +480,10 @@ html{
 }
 
 /* #### .board_write : 게시글 작성영역 ##### */
+
+/* answer_wrap : 답글 영역 */
+
+.answer_wrap{
+    padding-top: 60px;
+}
+/* #### answer_wrap : 답글 영역 ##### */

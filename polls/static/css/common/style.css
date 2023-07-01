@@ -248,4 +248,26 @@
     padding-left: 18px;
 }
 
+/* 마이 페이지 */
+.mypage {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 250px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    letter-spacing: .50px;
+    background-color: white;
+    transform: translateX(-50%);
+}
 
+.mypage > ul {
+    padding: 0;
+}
+
+.mypage > ul > li {
+    list-style: none;
+}
