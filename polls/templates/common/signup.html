@@ -2,7 +2,6 @@
 <html lang="en">
 {% load static %}
 <head>
-{% include 'poll/sidebar.html' %}
     <meta charset="UTF-8">
     <title>SIGNUP</title>
     <link rel="stylesheet" href="{% static 'css/common/style.css' %}">
@@ -13,7 +12,7 @@
     </style>
 </head>
 <body>
-    <section id="signup">
+    <section id="signup" class="signup">
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% include 'form_errors.html' %}
