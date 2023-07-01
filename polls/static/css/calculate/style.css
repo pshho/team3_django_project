@@ -12,9 +12,9 @@ label {display: block; margin-bottom: 5px; font-weight: bold;
     font-size: 1.5em}
 
 /* 입력 필드 */
-input[type="number"] {width: 100%; height: 40px; padding: 10px; margin-bottom: 5px;
+input[type="number"] {width: 100%; height: 40px; padding: 15px 10px 10px 15px; margin-bottom: 5px;
     border: 1px solid #ccc; border-radius: 3px; display: block;
-    box-sizing: border-box;}
+    box-sizing: border-box; font-size: 18px;}
 
 /* 계산 버튼 */
 input[type="submit"] {width: 100%; padding: 15px; background-color: rgb(82, 126, 127); \

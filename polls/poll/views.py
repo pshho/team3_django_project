@@ -43,3 +43,18 @@ def index_search_list(request):
 
 def test_socal(request):
     return render(request, 'poll/test.html')
+
+def footer_source(request):
+    return render(request, 'footer/출처.html')
+
+
+def footer_clause(request):
+    return render(request, 'footer/이용약관.html')
+
+
+def footer_location(request):
+    return render(request, 'footer/위치 기반 서비스.html')
+
+
+def footer_personal(request):
+    return render(request, 'footer/개인정보처리방침.html')
