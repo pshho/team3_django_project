@@ -8,8 +8,8 @@ class FreeForm(forms.ModelForm):
         model = Review_Board
         fields = ['r_title', 'r_content', 'r_type']
         labels = {
-            'b_title': '제목',
-            'b_content': '내용',
+            'r_title': '제목',
+            'r_content': '내용',
             'r_type': '구분',
         }
 
