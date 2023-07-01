@@ -20,22 +20,18 @@ window.onload = function() {
 
     /* 클릭하면 할 일을 듣는 친구 : 리스너 */
     nextBtn.addEventListener('click', function() {
-        if(currentIdx < slideCount-3){
-            moveSlide(currentIdx + 1);
-
-        }else{
-            moveSlide(0);
-        }
-
+      if (currentIdx < slideCount - 3) {
+        moveSlide(currentIdx + 1);
+      } else {
+        moveSlide(0);
+      }
     });
 
     preBtn.addEventListener('click', function() {
-        if(currentIdx < 0){
-            moveSlide(currentIdx - 1);
-
-        }else{
-            moveSlide(slideCount - 3);
-        }
-
+      if (currentIdx > 0) {
+        moveSlide(currentIdx - 1);
+      } else {
+        moveSlide(slideCount - 3);
+      }
     });
-  }
+  };
