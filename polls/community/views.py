@@ -114,4 +114,6 @@ def board_free_delete(request, free_board_id):
 def comment_delete(request, comment_id):
     comment = get_object_or_404(Answer, pk=comment_id)
     comment.delete()
-    return redirect('community:detail', free_board_id=comment.board_id)
+    return redirect('community:detail', free_board_id=comment.board_id) # 댓글 삭제
+
+
