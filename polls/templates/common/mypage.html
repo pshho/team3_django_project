@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/common/style.css' %}">
 </head>
 <body>
+
     <div class="mypage">
         <ul>
             <li>아이디: {{ user.username }}</li>
@@ -15,5 +16,6 @@
             <li>가입일: {{ user.date_joined|date:"y-m-d" }}</li>
         </ul>
     </div>
+
 </body>
 </html>
