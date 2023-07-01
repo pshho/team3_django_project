@@ -62,7 +62,7 @@
                 <div class="recommendation_button">
                     <form action="{% url 'community:detail' free_board.id %}" method="post">
                         {% csrf_token %}
-                        <button type="submit" class="custombutton">추천하기</button>
+                        <button type="submit" class="custombutton">추천</button>
                     </form>
                 </div>
             </div>
@@ -94,7 +94,7 @@
             <form class="comment-form" action="{% url 'community:comment_create' free_board.id %}" method="post">
                 {% csrf_token %}
                 <textarea name="content" rows="10" required></textarea>
-                <button type="submit" class="custombutton">저장하기</button>
+                <button type="submit" class="custombutton">저장</button>
 
             </form>
         </section>

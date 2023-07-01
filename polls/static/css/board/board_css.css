@@ -289,8 +289,11 @@ html{
 }
 
 .comment-form textarea {
-    width: 100%;
+    width: 90%;
+    height: 50px;
     padding: 10px;
+    resize: none;
+
 }
 
 .comment-form button {
@@ -306,7 +309,7 @@ html{
 
 /* 커스텀 버튼 */
 .custombutton{
-    width: 11%;
+    width: 8%;
     height: 40px;
     background-color: #333;
     color: #fff;
@@ -317,6 +320,7 @@ html{
     float: right;
     margin-top: 5px;
 }
+
 .custombutton:hover{
     background-color: #555;
 }
