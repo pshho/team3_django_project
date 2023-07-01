@@ -25,12 +25,12 @@ a{text-decoration: none;color: initial;}
     /* 그말인 즉슨 최상위 태그의 값을 설정안하면 em을 한들 */
     /* rem을 한들 크기가 변하지 않음 */
     /* 최상위 태그는 html임 고로 html에 폰트사이즈를 주겠음 */
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 html{
     /* 폰트사이즈를 10으로 줫기때문에 3*10해서 30px이됨(바로위 strong값) */
-    font-size: 10px;
+    font-size: 16px;
     /* em은 뭐가다른가요?? 안알랴줌 */
     /* 근본원인은 */
     /* 시간없으면 1:00~1:20만 후딱보세요 */

@@ -26,7 +26,7 @@ a{text-decoration: none;color: initial;}
     /* 그말인 즉슨 최상위 태그의 값을 설정안하면 em을 한들 */
     /* rem을 한들 크기가 변하지 않음 */
     /* 최상위 태그는 html임 고로 html에 폰트사이즈를 주겠음 */
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 html{
