@@ -7,7 +7,7 @@
 }
 
 /* 전체 */
-* {margin: 0; padding: 0; font-family: GangwonEdu_OTFBoldA; box-sizing: border-box;}
+* {margin: 0; padding: 0; font-family: GangwonEdu_OTFBoldA; box-sizing: border-box; overflow: hidden;}
 
 /* 회원가입 */
 #signup {text-align: center;}
