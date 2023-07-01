@@ -39,7 +39,14 @@
             {% for question in question_list %}
             <div>
                 <div class="num">{{ question.id }}</div>
-                <div class="title"><a href="{% url 'community:detail' question.id %}">{{ question.b_title }}</a></div>
+                <div class="title">
+                    <a href="{% url 'community:detail' question.id %}">{{ question.b_title }}
+
+                    </a>
+                    {% if question.answer_set.count > 0 %}
+                        [{{question.num_answers }}]
+                    {% endif %}
+                </div>
                 <div class="writer">{{ question.user }}</div>
                 <div class="date">{{ question.b_regdate|date:"y-m-d"}}</div>
                 <div class="count">{{ question.b_hit }}</div>
@@ -47,6 +54,8 @@
 
             </div>
             {% endfor %}
+
+
         </div>
 
         <!-- 페이지 처리 영역 -->

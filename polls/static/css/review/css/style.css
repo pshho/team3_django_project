@@ -88,7 +88,10 @@ a{text-decoration: none;color: initial;}
 .board_wrap{
     width: 1000px;
     margin: 100px auto;
-    /* background-color: aquamarine; */
+    padding:10px;
+    text-align: center;
+    font-family: GangwonEdu_OTFBoldA;
+    background-color: #fff;
 }
 /* ####  board_wrap : 게시판 가장 부모영역 가장외곽 영역 #### */
 
@@ -260,7 +263,7 @@ html{
 
 /* bt_wrap : 목록 수정 영역*/
 .bt_wrap{
-    margin-top: 30px;
+    margin-top: 60px;
     text-align: center;
 
 }
@@ -356,8 +359,25 @@ html{
     border-bottom: 1px solid #000;
     line-height: 160%;
     font-size: 16px;
+    text-align:left;
 }
 
+/* 커스텀 버튼 */
+.custombutton{
+    width: 11%;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+}
+.custombutton:hover{
+    background-color: #555;
+}
 
 
 /* #### .board_view : 게시글 보여지는 영역 #### */

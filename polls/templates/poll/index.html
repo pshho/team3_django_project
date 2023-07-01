@@ -185,9 +185,63 @@
                     <span class="next">>></span>
                 </p>
             </section>
-            <script src="{% static 'js/slide.js' %}"></script>
+
+              <script>
+                $(document).ready(function() {
+                  let slides = $('.slides');
+                  let slide = $('.slides li');
+                  let currentIdx = 0;
+                  let slideCount = slide.length;
+                  let preBtn = $('.prev');
+                  let slideWidth = 300; /* 사진 길이 */
+                  let slideMargin = 30;
+                  let nextBtn = $('.next');
+                  let timer;
+
+                  slides.css('width', (slideWidth + slideMargin) * slideCount - slideMargin + 'px');
+
+                  function moveSlide(num) {
+                    slides.css('left', -num * (slideWidth + slideMargin) + 'px');
+                    currentIdx = num;
+                  }
+
+                  nextBtn.on('click', function() {
+                    if (currentIdx < slideCount - 3) {
+                      moveSlide(currentIdx + 1);
+                    } else {
+                      moveSlide(0);
+                    }
+                  });
+
+                  preBtn.on('click', function() {
+                    if (currentIdx > 0) {
+                      moveSlide(currentIdx - 1);
+                    } else {
+                      moveSlide(slideCount - 3);
+                    }
+                  });
+
+                  function startAutoSlide() {
+                    timer = setInterval(function() {
+                      if (currentIdx < slideCount - 3) {
+                        moveSlide(currentIdx + 1);
+                      } else {
+                        moveSlide(0);
+                      }
+                    }, 3000); /* 넘기는 밀리세턴드 */
+                  }
+
+                  function stopAutoSlide() {
+                    clearInterval(timer);
+                  }
+
+                  startAutoSlide();
+                });
+              </script>
+
         </section>
     </section>
 {% include 'footer/footer.html' %}
 </body>
+
 </html>
