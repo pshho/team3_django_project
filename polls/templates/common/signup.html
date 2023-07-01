@@ -13,7 +13,7 @@
 </head>
 <body>
     <section id="signup" class="signup">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" id="signup_form">
             {% csrf_token %}
             {% include 'form_errors.html' %}
             <div>
@@ -22,23 +22,23 @@
             </div>
             <div>
                 <label for="username">아이디</label>
-                <input type="text" id="username" name="username" value="{{ form.username.value|default_if_none:'' }}">
+                <input type="text" id="username" name="username" value="{{ form.username.value|default_if_none:'' }}" required>
             </div>
             <div>
                 <label for="password1">비밀번호</label>
-                <input type="password" id="password1" name="password1" value="{{ form.password1.value|default_if_none:'' }}">
+                <input type="password" id="password1" name="password1" value="{{ form.password1.value|default_if_none:'' }}" required>
             </div>
             <div>
                 <label for="password2">비밀번호 확인</label>
-                <input type="password" id="password2" name="password2" value="{{ form.password2.value|default_if_none:'' }}">
+                <input type="password" id="password2" name="password2" value="{{ form.password2.value|default_if_none:'' }}" required>
             </div>
             <div>
                 <label for="last_name">이름</label>
-                <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value|default_if_none:'' }}">
+                <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value|default_if_none:'' }}" required>
             </div>
             <div>
                 <label for="email">이메일</label>
-                <input type="text" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}">
+                <input type="text" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required>
             </div>
             <!-- 사업자 등록증 필드 -->
             <div class="business-license-field">
@@ -52,7 +52,7 @@
                 <label for="extracted_text">추출된 텍스트</label>
                 <input type="text" id="extracted_text" name="extracted_text" readonly>
             </div>
-            <button type="submit">가입하기</button>
+            <button type="submit" class="signup_but">가입하기</button>
         </form>
 
         <script>

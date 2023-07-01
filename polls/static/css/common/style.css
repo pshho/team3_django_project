@@ -72,7 +72,8 @@
     font-weight: bold;
 }
 
-.signinup_button {
+.signinup_button,
+.signup_but {
     width: 150px;
     height: 40px;
     border-radius: 25px;
@@ -175,7 +176,7 @@
     z-index: 99;
 }
 
-.signinup-box2 > iframe {
+.signinup-box2 > div {
     width: 60%;
     height: 100%;
     text-align: center;
@@ -192,13 +193,13 @@
 
 /* 회원가입 스타일 전체 */
 .signup {
-    width: 100%;
+    width: 60%;
     height: 80%;
     margin-top: 20px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 0;
+    transform: translateY(-50%);
 }
 
 .signup > form {
@@ -245,18 +246,6 @@
 
 .signup > form > .business-license-field > input {
     padding-left: 18px;
-}
-
-.signup > form > button {
-    width: 150px;
-    height: 40px;
-    padding-top: 5px;
-    background-color: #4B70E2;
-    outline: none;
-    border: 0;
-    border-radius: 25px;
-    color: white;
-    cursor: pointer;
 }
 
 
