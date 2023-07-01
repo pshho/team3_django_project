@@ -97,6 +97,17 @@ a{text-decoration: none;color: initial;}
     margin-bottom: 30px;
 }
 
+.board_title p{
+    margin-top: 5px;
+    font-size: 16px;
+}
+/* 조회수 추천수 */
+.board_title_takes{
+    text-align: right;
+    font-size: 15px;
+}
+
+
 .board_title strong{
     /* 짤막상식 em과 rem 차이는 */
     /* rem은 최상위 태그(맨앞의 r이 root)에 곱한값 */

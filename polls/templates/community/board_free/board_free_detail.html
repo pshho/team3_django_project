@@ -97,16 +97,19 @@
         <h2>로그인시 댓글 이용 가능합니다.</h2>
         {% endif %}
     </div>
+
                 {% if free_board.user == request.user %}
             <div class="bt_wrap">
                 <a href="{% url 'community:free' %}" class="on">목록</a>
                 <a href="{% url 'community:update' free_board.id %}">수정</a>
                 <a href="{% url 'community:delete' free_board.id  %}" class="delete" data-uri="{% url 'community:delete' free_board.id %}">삭제</a>
 
+
             {% else %}
                 <div class="bt_wrap">
                     <a href="{% url 'community:free' %}" class="on">목록</a>
                 </div>
+
 
             </div>
             {% endif %}
@@ -120,6 +123,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
