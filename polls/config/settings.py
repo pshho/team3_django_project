@@ -61,7 +61,6 @@ INSTALLED_APPS = [
     'koreaCalendar',
 
 
-
 ]
 
 MIDDLEWARE = [
