@@ -11,7 +11,7 @@ urlpatterns = [
     path('<int:free_board_id>/', views.board_free_detail, name='detail'),  # 게시판 상세보기
 
     path('board_free_update/<int:free_board_id>',views.board_free_update, name='update'), # 게시판 수정
-    path('comment_update/<int:comment_id>/', views.comment_update, name='comment_update'),
+    path('comment_update/<int:comment_id>/', views.comment_update, name='comment_update'), # 댓글 수정
 
     path('board_free_write/',views.board_free_write, name='write'), # 게시판 작성
     path('comment/<int:free_board_id>/', views.comment_create, name='comment_create'), # 댓글 등록
