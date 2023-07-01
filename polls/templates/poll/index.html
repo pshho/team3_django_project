@@ -22,7 +22,7 @@
                 <ul>
                     {% if user.is_authenticated %}
                     <li style="border-right: transparent;">
-                        <a href="{% url 'common:signout' %}">로그아웃</a>
+                        <a href="{% url 'common:signout' %}">{{ user.username }}(로그아웃)</a>
                     </li>
                     {% else %}
                     <li>

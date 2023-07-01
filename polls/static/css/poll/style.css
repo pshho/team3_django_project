@@ -264,19 +264,28 @@ a:hover {
 /* header-side-login 시작 */
 .header-bar > .header-side-login {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 25px;
+
 }
 
 .header-bar > .header-side-login > ul {
-    margin-right: 40px;
+    text-align: center;
+    background: #f8b62c;
+    border-radius: 5px;
+    padding: 5px 35px;
 }
 
 .header-bar > .header-side-login > ul > li {
     display: inline-block;
     margin-top: 5px;
-    margin-right: 15px;
+    padding: 0 7px;
     font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.header-bar > .header-side-login > ul > li > a:hover {
+    color: white;
     font-weight: bold;
 }
 /* header-side-login 끝 */
@@ -290,11 +299,13 @@ a:hover {
     display: flex;
     justify-content: center;
     width: 100%;
+
 }
 
 .header-bar > .header-menu > ul > li {
     display: inline-block;
     position: relative;
+
 }
 
 .header-bar > .header-menu > ul ul {
