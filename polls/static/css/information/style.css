@@ -1,6 +1,6 @@
 *{margin: 0; padding: 0;}
 ol, ul, li{list-style: none;}
-a{color:#ccc; text-decoration: none;}
+a{text-decoration: none; color: black;}
 
 .information_box{
     overflow: hidden;
@@ -49,7 +49,7 @@ a{color:#ccc; text-decoration: none;}
 
 .smart_toggle {
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 100px;
 }
 
 #smart h4 {
