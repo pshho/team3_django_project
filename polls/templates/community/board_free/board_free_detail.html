@@ -58,7 +58,7 @@
                     </dl>
                 </div>
 
-                <div class="cont">{{free_board.b_content}}</div>
+                <div class="cont" style="white-space: pre-wrap;">{{free_board.b_content}}</div>
                 <div class="recommendation_button">
                     <form action="{% url 'community:detail' free_board.id %}" method="post">
                         {% csrf_token %}

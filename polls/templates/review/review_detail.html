@@ -57,9 +57,9 @@
                         <dd>{{review_board.r_recommend}}</dd>
                     </dl>
                 </div>
-                <div class="cont">{{review_board.r_content}}</div>
+                <div class="cont" style="white-space: pre-wrap;">{{review_board.r_content}}</div>
                 <div class="recommendation_button">
-                    <form action="{% url 'review:comment_create' review_board.id %}" method="post">
+                    <form action="{% url 'review:review_detail' review_board.id %}" method="post">
                         {% csrf_token %}
                         <button type="submit" class="custombutton">추천하기</button>
                     </form>
