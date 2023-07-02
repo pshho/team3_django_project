@@ -7,10 +7,14 @@
 }
 
 /* 전체 */
-* {margin: 0; padding: 0; font-family: GangwonEdu_OTFBoldA; box-sizing: border-box; overflow: hidden;}
+* {margin: 0; padding: 0; font-family: GangwonEdu_OTFBoldA; box-sizing: border-box;}
 
 /* 회원가입 */
 #signup {text-align: center;}
+
+body {
+    overflow: hidden;
+}
 
 /* 전체 스타일 */
 .signinup-box {
@@ -251,13 +255,16 @@
 }
 
 .signup > form > .business-license-field {
-    width: 90%;
+    width: 80%;
     padding-bottom: 20px;
 }
 
 .signup > form > .business-license-field > input {
-    padding-left: 40px;
     padding-bottom: 30px;
+}
+
+.signup > form > .business-license-field > label {
+    margin-right: 4%;
 }
 
 /* 마이 페이지 */

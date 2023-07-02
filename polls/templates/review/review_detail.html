@@ -13,10 +13,6 @@
 {% include 'poll/sidebar.html' %}
 {% include 'poll/header.html' %}
 <div class="board_wrap">
-    <div class="board_title">
-        <strong>게시글보기</strong>
-    </div>
-
 
     <div class="board_view_wrap">
         <div class="board_view">
@@ -60,7 +56,7 @@
             <div class="recommendation_button">
                 <form action="{% url 'review:review_detail' review_board.id %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="custombutton">추천하기</button>
+                    <button type="submit" class="custombutton">추천</button>
                 </form>
             </div>
 
@@ -86,7 +82,7 @@
                     <form class="comment-form" action="{% url 'review:comment_create' review_board.id %}" method="post">
                         {% csrf_token %}
                         <textarea name="content" rows="10" required></textarea>
-                        <button type="submit" class="custombutton">저장하기</button>
+                        <button type="submit" class="custombutton">저장</button>
 
                     </form>
                 </section>

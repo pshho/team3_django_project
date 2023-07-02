@@ -222,7 +222,6 @@ html{
 
 .board_view {
     width: 100%;
-    border-top: 2px solid #000;
 }
 
 .board_view .title {
@@ -307,6 +306,7 @@ html{
 }
 
 .comment-form button {
+    margin-right: 37px;
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
