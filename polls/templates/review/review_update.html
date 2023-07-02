@@ -37,9 +37,7 @@
                             <dt>글쓴이</dt>
                             <dd>{{ review_board.user }}</dd>
                         </dl>
-                    </div>
-                    <div>
-                        <dl>
+                          <dl>
                             <dt>구분</dt>
                             <dd>
                               <select name="r_type" id="r_type">
@@ -50,6 +48,9 @@
                             </dd>
                         </dl>
                     </div>
+
+
+
                     <div class="cont">
                         <textarea name="r_content">{{ form.r_content.value }}</textarea>
                     </div>
@@ -62,7 +63,7 @@
             </form>
         </div>
     </div>
-    {% include 'footer/footer.html' %}
+   {% include 'poll/footer.html' %}
 </body>
 
 </html>
