@@ -40,9 +40,9 @@
             <h4>똑똑하게 집 구하기</h4>
             <h4 class="smart_toggle" style="cursor: pointer;">닫기</h4>
             <div class="smart_top_a">
-                <a href="{% url 'information:info_smart_blue' %}" target="smart">매매</a>|
+                <a href="{% url 'information:info_smart_blue' %}" target="smart">청약</a>|
                 <a href="{% url 'information:info_smart_jansa' %}" target="smart">전월세</a>|
-                <a href="{% url 'information:info_smart_mama' %}" target="smart">청약</a>
+                <a href="{% url 'information:info_smart_mama' %}" target="smart">매매</a>
             </div>
         </div>
         <div class="smart_section">
@@ -71,7 +71,7 @@
        
         
     </script>
-
+{% include 'poll/footer.html' %}
 </body>
 
 </html>

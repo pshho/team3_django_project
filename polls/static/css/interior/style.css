@@ -4,12 +4,23 @@ a{text-decoration: none; color: inherit;}
 
 .list_wrap{
     width: 1000px;
-    margin: 0px auto;
-    padding: 100px;
+    margin: 20px auto;
+    margin-bottom: 100px
+    padding: 50px;
+    background: white;
+}
+.list_wrap > p {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    padding: 80px 50px 50px 50px;
+    border-bottom: 1px solid #ccc
 }
 
 .list_wrap ul{
     font-size: 0;
+    padding: 50px;
+    margin-bottom: 100px;
 }
 .list_wrap .item{
     display: inline-block;
@@ -95,11 +106,11 @@ a{text-decoration: none; color: inherit;}
     /* strong은 inline요소라 margine이 적용안됨 그래서 바꿈 */
     display: block;
     margin: 0px 0 10px 0;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: -1px;
 }
 .list_wrap .item p{
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: -1px;
 }
 .list_wrap .item a{
@@ -107,7 +118,7 @@ a{text-decoration: none; color: inherit;}
     margin-top: 10px;
     background: #eee;
     padding: 5px 10px;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: -1px;
     /* transition: 대상 시간 방식 */
     transition: all 1s ease;
