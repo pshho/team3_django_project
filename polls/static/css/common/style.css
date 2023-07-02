@@ -257,6 +257,7 @@ body {
 .signup > form > .business-license-field {
     width: 80%;
     padding-bottom: 20px;
+
 }
 
 .signup > form > .business-license-field > input {
@@ -264,7 +265,8 @@ body {
 }
 
 .signup > form > .business-license-field > label {
-    margin-right: 4%;
+    margin-right: 9%;
+    text-align: left;
 }
 
 /* 마이 페이지 */
