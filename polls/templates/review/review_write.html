@@ -61,12 +61,11 @@
                     </dl>
                 </div>
                 <div class="cont">
-                    <label for="r_content"><label>
-                        <textarea name="r_content" id="r_content" rows="10" placeholder="내용입력" required>{{form.r_content.value|default_if_none:''}}</textarea>
+                    <label for="r_content"></label>
+                    <textarea name="r_content" id="r_content" rows="10" placeholder="내용입력" required>{{form.r_content.value|default_if_none:''}}</textarea>
                 </div>
             </div>
             <div class="bt_wrap">
-
                 <a><button type="submit" class="custom-submit-button">등록</button></a>
                 <a href="{% url 'review:review_main' %}">취소</a>
             </div>
