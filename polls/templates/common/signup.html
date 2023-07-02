@@ -17,26 +17,26 @@
         <div>
             <label for="username">아이디</label>
             <input type="text" id="username" name="username" value="{{ form.username.value|default_if_none:'' }}"
-                   required>
+                   required placeholder="아이디">
         </div>
         <div>
             <label for="password1">비밀번호</label>
             <input type="password" id="password1" name="password1" value="{{ form.password1.value|default_if_none:'' }}"
-                   required>
+                   required placeholder="비밀번호">
         </div>
         <div>
             <label for="password2">비밀번호 확인</label>
             <input type="password" id="password2" name="password2" value="{{ form.password2.value|default_if_none:'' }}"
-                   required>
+                   required placeholder="비밀번호 확인">
         </div>
         <div>
             <label for="last_name">이름</label>
             <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value|default_if_none:'' }}"
-                   required>
+                   required placeholder="이름">
         </div>
         <div>
             <label for="email">이메일</label>
-            <input type="text" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required>
+            <input type="text" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required placeholder="이메일">
         </div>
         <!-- 사업자 등록증 필드 -->
         <div class="business-license-field">

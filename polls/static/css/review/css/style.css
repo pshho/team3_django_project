@@ -306,7 +306,6 @@ html{
 
 .board_view {
     width: 100%;
-    border-top: 2px solid #000;
 }
 
 .board_view .title {
@@ -372,7 +371,7 @@ html{
 /* 댓글 기능 */
 .comment {
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     background-color: #f1f1f1;
     border: 1px solid #ccc;
     text-align: initial;
@@ -383,8 +382,9 @@ html{
 }
 
 .comment-form textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
+    resize: none;
 }
 
 .comment-form button {
@@ -395,10 +395,25 @@ html{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-right: 37px;
 }
 
 /* 커스텀 버튼 */
 .custombutton{
+    width: 5%;
+    height: 25px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+section > form > .custombutton{
     width: 11%;
     height: 40px;
     background-color: #333;
@@ -409,6 +424,7 @@ html{
     cursor: pointer;
     float: right;
     margin-top: 5px;
+    margin-left: 5px;
 }
 .custombutton:hover{
     background-color: #555;

@@ -15,10 +15,6 @@
 {% include 'poll/sidebar.html' %}
 {% include 'poll/header.html' %}
 <div class="board_wrap">
-    <div class="board_title">
-        <strong>게시글 상세 보기</strong>
-    </div>
-
     <div class="board_view_wrap">
         <div class="board_view">
             <div class="title">
@@ -97,20 +93,20 @@
     {% else %}
     <h2>로그인시 댓글 이용 가능합니다.</h2>
     {% endif %}
+    {% if free_board.user == request.user %}
+    <div class="bt_wrap">
+        <a href="{% url 'community:free' %}" class="on">목록</a>
+        <a href="{% url 'community:update' free_board.id %}">수정</a>
+        <a href="{% url 'community:delete' free_board.id  %}" class="delete"
+           data-uri="{% url 'community:delete' free_board.id %}">삭제</a>
+    </div>
+    {% else %}
+    <div class="bt_wrap">
+        <a href="{% url 'community:free' %}" class="on">목록</a>
+    </div>
+    {% endif %}
 </div>
 
-{% if free_board.user == request.user %}
-<div class="bt_wrap">
-    <a href="{% url 'community:free' %}" class="on">목록</a>
-    <a href="{% url 'community:update' free_board.id %}">수정</a>
-    <a href="{% url 'community:delete' free_board.id  %}" class="delete"
-       data-uri="{% url 'community:delete' free_board.id %}">삭제</a>
-</div>
-{% else %}
-<div class="bt_wrap">
-    <a href="{% url 'community:free' %}" class="on">목록</a>
-</div>
-{% endif %}
 {% include 'poll/footer.html' %}
 <script>
       $(document).ready(function(){
