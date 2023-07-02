@@ -50,7 +50,7 @@
                 name="smart"></iframe>
         </div>
     </div>
-    
+
     <script>
         // 토글테스트
         $(function(){
@@ -59,17 +59,17 @@
                 $('.smart_section').toggle().css('transition','0.3s')
                 $('.smart_top_a').toggle()
                 // $(this가 함수 연 주체 지금은 smart_toggle )
-                // 3항 연산자로 제어 
+                // 3항 연산자로 제어
                 // smart_toggle 글씨가 열기인가요? -> 닫기
                 // smart_toggle 글씨가 닫기인가요? -> 열기
                 // 이미지로 하는게 나을지도..
                 var text = $(this).text()
                 $(this).text(text === '열기' ? '닫기' : '열기');
-                
+
             })
         })
-       
-        
+
+
     </script>
 
 </body>

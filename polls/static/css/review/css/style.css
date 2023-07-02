@@ -60,11 +60,11 @@ a{text-decoration: none;color: initial;}
 
 
 .category_wrap li a{
-    font-size: 1.5rem;
+    font-size: 20px;
 }
 
 .category_wrap a {
-  text-decoration: none;
+
   
   color: #000;
   font-size: 1.0rem;
@@ -87,8 +87,9 @@ a{text-decoration: none;color: initial;}
 /* board_wrap : 게시판 가장 부모영역 가장외곽 영역*/
 .board_wrap{
     width: 1000px;
-    margin: 100px auto;
-    padding:10px;
+    margin: 20px auto;
+    margin-bottom: 100px;
+    padding:80px 50px 50px 50px;
     text-align: center;
     font-family: GangwonEdu_OTFBoldA;
     background-color: #fff;
@@ -97,7 +98,7 @@ a{text-decoration: none;color: initial;}
 
 /* .board_title : 게시판 제목영역 */
 .board_title{
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .board_title p{
@@ -117,7 +118,7 @@ a{text-decoration: none;color: initial;}
     /* 그말인 즉슨 최상위 태그의 값을 설정안하면 em을 한들 */
     /* rem을 한들 크기가 변하지 않음 */
     /* 최상위 태그는 html임 고로 html에 폰트사이즈를 주겠음 */
-    font-size: 3rem;
+    font-size: 42px;
 }
 
 html{
@@ -173,6 +174,7 @@ html{
 
 .board_list > div.top > div{
     font-weight: 600;
+    font-size: 20px;
 }
 
 .board_list .num{
@@ -187,20 +189,25 @@ html{
 
 .board_list .writer{
     width: 10%;
+    font-size: 16px;
 }
 .board_list .date{
     width: 10%;
+    font-size: 16px;
 }
 .board_list .count{
     width: 10%;
+    font-size: 16px;
 }
 
 .board_list .recommend{
     width: 10%;
+    font-size: 16px;
 }
 
 .board_list .division{
     width: 10%;
+    font-size: 16px;
 }
 
 /* #### board_list : 게시판 내용 #### */
