@@ -7,7 +7,6 @@ from django.forms import model_to_dict
 
 from .models import SeouljRent, SeoulReal
 
-
 # 지도 표시 html 보냄
 def search(request):
     return render(request, 'map/search.html')
