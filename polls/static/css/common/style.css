@@ -97,6 +97,11 @@ body {
     cursor: pointer;
 }
 
+.signinup_button:hover,
+.signup_but:hover {
+    text-decoration: underline;
+}
+
 /* LOGIN */
 .login_container > h1 {
     margin-bottom: 20px;
@@ -256,17 +261,27 @@ body {
 
 .signup > form > .business-license-field {
     width: 80%;
-    padding-bottom: 20px;
-
+    justify-content: center;
+    flex: 1;
 }
 
 .signup > form > .business-license-field > input {
-    padding-bottom: 30px;
+    width: 70%;
+    height: 35px;
+    font-size: 16px;
+    padding: 3px 15px;
+    border: 1px solid #aaa;
+}
+
+.signup > form > .business-license-field > input[type='hidden'] {
+    display: none;
 }
 
 .signup > form > .business-license-field > label {
-    margin-right: 9%;
+    width: 25%;
     text-align: left;
+    margin-top: 7px;
+    font-size: 16px;
 }
 
 /* 마이 페이지 */
@@ -291,4 +306,11 @@ body {
 
 .mypage > ul > li {
     list-style: none;
+}
+
+section > form > .error_data {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
 }

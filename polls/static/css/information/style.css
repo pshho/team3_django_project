@@ -1,11 +1,12 @@
 @font-face {
-            font-family: 'GangwonEdu_OTFBoldA';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 *{margin: 0; padding: 0;}
+body{font-family: 'GangwonEdu_OTFBoldA';}
 ol, ul, li{list-style: none;}
 a{text-decoration: none; color: black;}
 
@@ -31,11 +32,11 @@ a{text-decoration: none; color: black;}
     padding: 0 20px 20px 0;
     margin: 20px 20px 0 30px;
     cursor: pointer;
-    background: url("{% static 'images/bullet_down.png' %}") no-repeat right;
+    background: url(./images/bullet_down.png) no-repeat right center;
     font-size: 20px;
 
 }
-.information_box ol li.on h4{background: url(./images/bullet_up.png) no-repeat right;}
+.information_box ol li.on h4{background: url(./images/bullet_up.png) no-repeat right center;}
 .information_box ol li h4 span{margin-right: 10px;font-weight: 900;}
 .information_box ol li p{visibility: hidden; line-height: 2;}
 .information_box ol li.on p{padding: 30px 100px; background: #eee; visibility: visible;transition: 0.3s; font-size: 18px;}
@@ -49,6 +50,7 @@ a{text-decoration: none; color: black;}
   background-color: white;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 99;
 }
 
 .smart_j{

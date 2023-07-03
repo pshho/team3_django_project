@@ -58,7 +58,6 @@
         <button id="signinup_button2" class="signinup_button">로그인</button>
     </section>
     <div id="signup_data"></div>
-    <!--<iframe src="{% url 'common:signup' %}"></iframe>-->
 </section>
 <script>
     $(document).ready(function() {
@@ -100,15 +99,24 @@
 
                 $('#signup_data').on('submit', '#signup_form', function(e) {
                     e.preventDefault();
+
                     // 폼 데이터 가져오기
                     var formData = $(this).serialize();
+
                     // 회원가입 폼 데이터 전송
                     $.ajax({
                         url: '{% url 'common:signup' %}',
                         type: 'POST',
                         data: formData,
                         success: function(response) {
-                            window.location.href = "{% url 'poll:index' %}";
+                            if (response.success) {
+                                // 성공적으로 가입되었을 때 처리
+                                window.location.href = "{% url 'poll:index' %}";
+                            } else {
+                                // 가입 실패 시 에러 메시지 처리
+                                $('.error_data').empty();
+                                $('.error_data').append(response.errors.form_errors);
+                            }
                         },
                         error: function() {
                             console.log('회원가입 실패');
