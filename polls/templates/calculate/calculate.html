@@ -2,13 +2,13 @@
 <html lang="en">
 {% load static %}
 <head>
-{% include 'poll/sidebar.html' %}
-{% include 'poll/header.html' %}
     <meta charset="UTF-8">
     <title>Subscription</title>
     <link rel="stylesheet" href="{% static 'css/calculate/style.css' %}">
 </head>
 <body>
+{% include 'poll/sidebar.html' %}
+{% include 'poll/header.html' %}
     <div id="subscription">
         <form method="post" action="">
             {% csrf_token %}
@@ -22,10 +22,7 @@
             <input type="number" step="0.1" name="bankbook" id="bankbook" required><br>
 
             <input type="submit" value="계산하기">
-
-
         </form>
-
     </div>
     <h1>총 점수: {{ total_score }}</h1>
 {% include 'poll/footer.html' %}

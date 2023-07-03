@@ -70,7 +70,7 @@
         <div class="comment">
             {% if ans.author == request.user %}
             <button class="custombutton delete" data-uri="{% url 'community:comment_delete' ans.id %}">삭제</button>
-            <button class="custombutton delete" data-uri="{% url 'community:comment_update' ans.id %}">수정</button>
+            <button class="custombutton update" data-uri="{% url 'community:comment_update' ans.id %}">수정</button>
             {% endif %}
             <p>작성자: {{ ans.author }}</p>
             <p>{{ ans.content }}</p>
@@ -87,7 +87,7 @@
         <form class="comment-form" action="{% url 'community:comment_create' free_board.id %}" method="post">
             {% csrf_token %}
             <textarea name="content" rows="10" required></textarea>
-            <button type="submit" class="custombutton">저장</button>
+            <button type="submit" class="custom-button">저장</button>
         </form>
     </section>
     {% else %}
@@ -97,7 +97,7 @@
     <div class="bt_wrap">
         <a href="{% url 'community:free' %}" class="on">목록</a>
         <a href="{% url 'community:update' free_board.id %}">수정</a>
-        <a href="{% url 'community:delete' free_board.id  %}" class="delete"
+        <a href="{% url 'community:delete' free_board.id  %}" class="board_delete"
            data-uri="{% url 'community:delete' free_board.id %}">삭제</a>
     </div>
     {% else %}

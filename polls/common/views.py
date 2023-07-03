@@ -1,7 +1,10 @@
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 from django.shortcuts import render
 
 from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
+
 from .forms import UserForm, SignupForm
 
 from django.contrib.auth import authenticate, login, logout
@@ -31,7 +34,12 @@ def signup(request):
 
             user = authenticate(username=username, password=password, last_name=last_name, email=email)
             login(request, user)
-            return redirect('/')  # index 페이지로 이동
+            return JsonResponse({'success': True})
+        else:
+            errors = {
+                'form_errors': render_to_string('form_errors.html', {'form': form}),
+            }
+            return JsonResponse({'success': False, 'errors': errors})
     else:
         form = SignupForm()
 

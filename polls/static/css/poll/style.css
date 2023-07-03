@@ -6,12 +6,19 @@
             font-weight: normal;
             font-style: normal;
 }
-body {
 
+@font-face {
+    font-family: '박용준 투사회보';
+    src: url('../../webfonts/박용준 투사회보체.woff') format('woff');
+         url('../../webfonts/박용준 투사회보체.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
     background: #e8ecef;
     font-family: 'GangwonEdu_OTFBoldA';
     border-top: 10px solid #1d4f50
-
 }
 
 ul li {

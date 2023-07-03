@@ -197,6 +197,11 @@ html{
     border: 1px solid #000;
     border-radius: 2px;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.bt_wrap button:hover {
+    text-decoration: underline;
 }
 
 .bt_wrap button{
@@ -291,6 +296,7 @@ html{
     background-color: #f1f1f1;
     border: 1px solid #ccc;
     text-align: initial;
+    position: relative;
 }
 
 .comment p {
@@ -302,11 +308,10 @@ html{
     height: 50px;
     padding: 10px;
     resize: none;
-
 }
 
 .comment-form button {
-    margin-right: 37px;
+    margin-right: 40px;
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
@@ -314,30 +319,49 @@ html{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    float: right;
 }
 
+.comment-form button:hover {
+    background-color: #555;
+}
 
 /* 커스텀 버튼 */
 .custombutton{
-    width: 8%;
-    height: 40px;
+    width: 5%;
+    height: 35px;
     background-color: #333;
     color: #fff;
     font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
     margin-top: 5px;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.update {
+    position: absolute;
+    right: 5.5%;
+    bottom: 0;
 }
 
 .custombutton:hover{
     background-color: #555;
 }
 
+.custom-submit-button {
+    cursor: pointer;
+}
 
-
-
+.custom-submit-button:hover {
+    text-decoration: underline;
+}
 
 /* #### .board_view : 게시글 보여지는 영역 #### */
 
