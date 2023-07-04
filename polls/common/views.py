@@ -1,16 +1,19 @@
 from django.contrib.auth.models import User
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 
-from .forms import UserForm, SignupForm
+from .forms import UserForm, SignupForm, UserInformationUpdateForm
 
 from django.contrib.auth import authenticate, login, logout
 
 import pytesseract
 from PIL import Image
+
+from community.models import Free_Board
+from review.models import Review_Board
 
 
 # 회원 가입
@@ -26,11 +29,11 @@ def signup(request):
                 # 사업자 등록증 파일 처리
                 user.business_license = business_license
 
-            user.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             last_name = form.cleaned_data.get('last_name')
             email = form.cleaned_data.get('email')
+            user.save()
 
             user = authenticate(username=username, password=password, last_name=last_name, email=email)
             login(request, user)
@@ -78,11 +81,40 @@ def extract_text_from_image(image_file):
 
 # 마이 페이지
 def mypage(request):
-    req = request.user.username
-    user = User.objects.get(username=req)
+    user_id = request.user.id
+    user = User.objects.get(id=user_id)
+    free_write = Free_Board.objects.filter(user=user_id)
+    review_write = Review_Board.objects.filter(user=user_id)
 
     context = {
         'user': user,
+        'free_write': free_write,
+        'review_write': review_write,
     }
 
     return render(request, 'common/mypage.html', context)
+
+# 유저 삭제
+def mypage_delete(request, username):
+    user_delete = get_object_or_404(User, username=username)
+    user_delete.delete()
+    return redirect('poll:index')
+
+# 유저 정보 수정
+def mypage_update(request, username):
+    user = get_object_or_404(User, username=username)
+
+    if request.method == "POST":
+        form = UserInformationUpdateForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.save()
+
+            return redirect('common:mypage')
+    else:
+        form = UserInformationUpdateForm()
+
+    context = {
+        'user': user, 'form': form,
+    }
+    return render(request, 'common/mypage_update.html', context)

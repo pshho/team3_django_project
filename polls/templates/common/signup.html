@@ -35,7 +35,7 @@
         </div>
         <div>
             <label for="email">이메일</label>
-            <input type="text" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required placeholder="이메일">
+            <input type="email" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required placeholder="이메일">
         </div>
         <!-- 사업자 등록증 필드 -->
         <div class="business-license-field">
