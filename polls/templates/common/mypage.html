@@ -132,7 +132,8 @@
                 <li>
                     <div class="mypage_but">
                         <a href="{% url 'common:mypage_update' user.username %}">수정</a>
-                        <a href="{% url 'common:mypage_delete' user.username %}">회원 탈퇴</a>
+                        <a data-uri="{% url 'common:mypage_delete' user.username %}" class="delete"
+                        style="cursor: pointer;">회원 탈퇴</a>
                     </div>
                 </li>
             </ul>
@@ -142,6 +143,13 @@
         $(document).ready(function() {
             $('#mypage_writer').click(function() {
                 $('#mypage_write_view').toggle();
+            });
+
+            $('.delete').click(function(e){  //삭제 버튼을 클릭하면
+                e.preventDefault();  // 기본 동작인 링크 이동을 중지합니다.
+                if(confirm('정말 수정/삭제하시겠습니까?')){
+                    location.href=$(this).data('uri'); //현재 대상 객체의 주소를 이동
+                }
             });
         });
     </script>
