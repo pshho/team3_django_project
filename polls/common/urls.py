@@ -12,4 +12,6 @@ urlpatterns = [
     path('signin/', views.signin, name='signin'),
     path('logout/', views.signout, name='signout'),
     path('mypage/', views.mypage, name='mypage'),
+    path('<str:username>/', views.mypage_delete, name='mypage_delete'),
+    path('mypage_update/<str:username>/', views.mypage_update, name='mypage_update'),
 ]

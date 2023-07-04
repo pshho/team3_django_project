@@ -276,7 +276,7 @@ a:hover {
     text-align: center;
     background: #f8b62c;
     border-radius: 5px;
-    padding: 5px 35px;
+    padding: 5px 35px 5px 40px;
 }
 
 .header-bar > .header-side-login > ul > li {
@@ -436,7 +436,7 @@ ul > li {
     width: 13%;
     position: absolute;
     top: 3%;
-    right: 2%;
+    right: 0;
     text-align: center;
     padding: 5px 0;
     border-radius: 5px;
@@ -456,7 +456,7 @@ ul > li {
     display: inline-block;
 }
 
-.main_index > .main_top_index > .main_login_register > ul > li:hover > a {
+.main_index > .main_top_index > .main_login_register > ul > li > a:hover:first-of-type {
     text-decoration: underline;
 }
 
@@ -853,23 +853,7 @@ ul > li {
     position: relative;
 }
 
-.header-side-login > ul > li > .mypage_view:hover > iframe {
-    visibility: visible;
-    transition: 1s ease-in-out;
-}
-
-.header-side-login > ul > li > .mypage_view > iframe {
-    width: 250px;
-    height: 130px;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    z-index: 999;
-    visibility: hidden;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
+/* 메인 마이페이지 */
 .main_index > .main_top_index > .main_login_register > ul > .logmy {
     display: flex;
     justify-content: flex-end;
@@ -884,21 +868,8 @@ ul > li {
     width: 25%;
 }
 
-.main_index > .main_top_index > .main_login_register > ul > li > .mypage_view:hover > iframe {
-    visibility: visible;
-    transition: 1s ease-in-out;
-}
-
-.main_index > .main_top_index > .main_login_register > ul > li > .mypage_view > iframe {
-    width: 250px;
-    height: 130px;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    z-index: 999;
-    visibility: hidden;
-    border: 1px solid #ccc;
-    outline: none;
+.main_index > .main_top_index > .main_login_register > ul > li > .mypage_view:hover {
+    text-decoration: underline;
 }
 
 
