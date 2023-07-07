@@ -472,6 +472,17 @@ $(document).ready(function() {
             // 마커 클러스터링 업데이트
             updateMarkerClustering(all_markers);
 
+            // updateMarkers 스크롤 시 함수 실행
+            naver.maps.Event.addListener(map, 'zoom_changed', function() {
+                updateMarkers(map, all_markers);
+                infoWindow.close();
+            });
+
+            naver.maps.Event.addListener(map, 'dragend', function() {
+                updateMarkers(map, all_markers);
+                infoWindow.close();
+            });
+
         },
         error: function() {
             console.log('에러')
@@ -526,18 +537,6 @@ $(document).ready(function() {
             }
         })
     })
-
-    // updateMarkers 스크롤 시 함수 실행
-    naver.maps.Event.addListener(map, 'zoom_changed', function() {
-        updateMarkers(map, all_markers);
-        infoWindow.close();
-    });
-
-    naver.maps.Event.addListener(map, 'dragend', function() {
-        updateMarkers(map, all_markers);
-        infoWindow.close();
-    });
-
 })
 
 
