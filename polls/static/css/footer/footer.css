@@ -28,3 +28,11 @@ footer #bottomMenu {
     list-style-type: none;
     margin-bottom: 50px;
 }
+
+/* 반응형 시작 */
+@media screen and (max-width: 510px) {
+    footer {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
