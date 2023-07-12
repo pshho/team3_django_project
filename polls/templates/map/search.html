@@ -8,11 +8,11 @@
 
     <style>
         html, body {
-            height: 85%;
+            height: 100%;
         }
 
         .map_real_estate {
-            height: 100%;
+            height: 85%;
             position: relative;
         }
 
@@ -102,9 +102,7 @@
         }
 
         .map_real_estate_detail > .map_grouping > label > input {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
+            display: none;
             margin: 0;
         }
 
@@ -133,7 +131,6 @@
             .map_real_estate {
                 width: 90%;
                 margin: 30px auto 0 auto;
-                height: 90%;
             }
 
             .map_real_estate_btn {
@@ -146,14 +143,15 @@
                 width: 100%;
                 top: auto;
                 bottom: 0;
-                height: 20%;
+                height: 15vh;
+            }
+
+            .map_real_estate_detail > .map_grouping {
+                font-size: 0.8rem;
             }
 
             .map_real_estate_detail > .map_search_view > ul {
                 font-size: 0.8rem;
-            }
-
-            .map_real_estate_detail > .map_search_view > ul > li {
                 display: none;
             }
 
@@ -220,12 +218,12 @@
         map.setCursor('pointer');
 
         $('#smart_phone_map').on('click', function () {
-            if ($('.map_real_estate_detail').css('height') < '25%') {
-                $('.map_real_estate_detail').css('height', '80%');
-                $('.map_real_estate_detail > .map_search_view > ul > li').css('display', 'block');
+            if ($('.map_real_estate_detail').css('height') < '200px') {
+                $('.map_real_estate_detail').css('height', '70vh');
+                $('.map_real_estate_detail > .map_search_view > ul').css('display', 'block');
             } else {
-                $('.map_real_estate_detail').css('height', '20%');
-                $('.map_real_estate_detail > .map_search_view > ul > li').css('display', 'none');
+                $('.map_real_estate_detail').css('height', '15vh');
+                $('.map_real_estate_detail > .map_search_view > ul').css('display', 'none');
             }
         });
     </script>
