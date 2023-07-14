@@ -439,7 +439,7 @@ ul > li {
 .main_index > .main_top_index > .main_login_register {
     font-size: 1.2rem;
     background-color: rgb(117, 168, 169);
-    width: 13%;
+    width: 16%;
     position: absolute;
     top: 3%;
     right: 0;
@@ -469,6 +469,10 @@ ul > li {
 .main_index > .main_top_index > .main_login_register > ul > li:first-of-type {
     border-right: 1px solid white;
     padding-right: 10px;
+}
+
+.main_index > .main_top_index > .main_login_register > ul > li:first-of-type > a {
+    flex: 1;
 }
 /* 상단 배경, 로고, 로그인/회원가입 끝 */
 
@@ -502,7 +506,7 @@ ul > li {
     font-size: 1.5rem;
     padding-top: 8px;
     font-size: 1.5rem;
-    padding: 8px 0 0 30px;
+    padding: 8px 0 0 10px;
     margin-left: -30px;
 }
 
@@ -513,7 +517,7 @@ ul > li {
 .main_index > .main_top_index > .main_middle_index > div > form > ul > .main_middle_search {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 20px;
     width: 10%;
     height: 51px;
     transform: translateY(-50%);
@@ -867,6 +871,7 @@ ul > li {
 
 .main_index > .main_top_index > .main_login_register > ul > .logmy > a:first-of-type {
     width: 35%;
+    padding-left: 35px;
 }
 
 .main_index > .main_top_index > .main_login_register > ul > li > .mypage_view {
@@ -943,7 +948,7 @@ ul > li {
         display: block;
         width: 60%;
         height: 100%;
-        z-index: 99;
+        z-index: 200;
     }
 
     .header-bar > .header-menu > img {
@@ -1076,7 +1081,7 @@ ul > li {
 
 @media screen and (max-width: 1200px) {
     .main_index > .main_top_index > .main_login_register {
-        width: 24%;
+        width: 23%;
     }
 
     .main_index > .main_top_index > .main_bottom_index {
@@ -1224,6 +1229,10 @@ ul > li {
         border-top: 5vw solid rgb(237, 95, 107);
         border-left: 5vw solid transparent;
     }
+
+    .main_index > .main_top_index > .main_middle_index > div > form > ul > li > input {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 870px) {
@@ -1246,11 +1255,90 @@ ul > li {
     }
 
     .main_index > .main_top_index > .main_middle_index > div {
-        width: 65%;
+        width: 75%;
+    }
+
+    .main_index > .main_top_index > .main_middle_index > div > p {
+        margin: 18px 0 8px -8px;
+    }
+
+    .main_index > .main_top_index > .main_middle_index > div > form > ul > li > input {
+        margin-left: -5px;
+    }
+
+    .main_index > .main_top_index > .main_middle_index > div > form > ul > .main_middle_search {
+        right: -5px;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > div:first-of-type > p:first-of-type {
+        font-size: 1.4rem;
+        margin-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > div:first-of-type > p:last-of-type {
+        font-size: 1rem;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu {
+        bottom: 5%;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > p,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > p,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > p,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > p {
+        font-size: 1.4rem;
+        text-align: left;
+        padding-bottom: 2.5px;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > div:last-of-type,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > div:last-of-type,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > div:last-of-type,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > div:last-of-type {
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > div:last-of-type > p,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > div:last-of-type > p,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > div:last-of-type > p,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > div:last-of-type > p {
+        margin: auto 10px;
+    }
+
+    .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > .main_subscription_subMenu,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > .main_notice_subMenu,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > .main_community_subMenu,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > .main_customer_service_subMenu {
+        display: none;
     }
 
     .slide_wrapper {
         width: 490px;
+    }
+
+    .main_index > .main_top_index > .main_login_register {
+        width: 30%;
+    }
+
+    .main_index > .main_top_index > .main_login_register > ul > .logmy > a:first-of-type {
+        padding-left: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main_index > .main_top_index > .main_bottom_index > div > .main_subscription_menu > div:last-of-type,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_notice_menu > div:last-of-type,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_community_menu > div:last-of-type,
+    .main_index > .main_top_index > .main_bottom_index > div > .main_customer_service_menu > div:last-of-type {
+        font-size: 0.75rem;
     }
 }
 
@@ -1272,6 +1360,14 @@ ul > li {
     .main_index > .main_top_index > .main_login_register {
         font-size: 0.9rem;
         width: 35%;
+    }
+
+    .main_index > .main_top_index > .main_login_register > ul > li:first-of-type > a {
+        flex: 1;
+    }
+
+    .main_index > .main_top_index > .main_login_register > ul > .logmy > a:first-of-type {
+        padding-left: 8px;
     }
 
     .slide_wrapper {
