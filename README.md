@@ -19,6 +19,9 @@
 - **Database**: Sqlite3
 - **개발 Tool**: VS Code, PyCharm, Figma, Git
 
+### 주요 기능
+- 
+
 ### 구성 멤버
 ![image](https://github.com/pshho/team3_django_project/assets/128444203/fde8351a-6709-4135-9c47-f07718e4d8d4)
 
