@@ -1,5 +1,5 @@
 # Python Django 프로젝트
-- Server Repository: https://github.com/pshho/aws-django.git
+- Server Repository: <a href="https://github.com/pshho/aws-django.git">서버 Git 주소</a>
 - Web Page 주소: http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/
 
 ## 프로젝트 소개
