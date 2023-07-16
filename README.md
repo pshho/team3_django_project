@@ -1,6 +1,6 @@
 # Python Django 프로젝트
 - Server Repository: https://github.com/pshho/aws-django.git
-- Server Page 주소: http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/
+- Web Page 주소: http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/
 
 ## 프로젝트 소개
 * 프로젝트 명: 집집
@@ -23,7 +23,12 @@
 - 
 
 ### 구성 멤버
-![image](https://github.com/pshho/team3_django_project/assets/128444203/fde8351a-6709-4135-9c47-f07718e4d8d4)
+<details>
+  <summary>멤버별 역할</summary>
+  <p>
+    <img src="https://github.com/pshho/team3_django_project/assets/128444203/fde8351a-6709-4135-9c47-f07718e4d8d4" alt="Image">
+  </p>
+</details>
 
 
 
