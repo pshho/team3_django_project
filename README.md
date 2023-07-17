@@ -21,18 +21,27 @@
 - **개발 Tool**: VS Code, PyCharm, Figma, Git
 
 ### :gear: 주요 기능
+#### * 로그인/회원가입/마이페이지
+- 하나의 페이지에서 로그인과 회원가입(별도 Page Parsing) 구현
+- 소셜로그인 기능 구현(구글, 카카오, 네이버)
+- 회원가입 시 아이디(영문, 숫자)/사업자 등록증/비밀번호 8자 이상(영, 숫자) 유효성 검사 구현
+- 로그인 후 마이페이지를 통해 회원정보 수정, 회원탈퇴, 해당 아이디의 게시판 작성글 확인 기능 구현
 <details>
-  <summary>로그인/회원가입/마이페이지</summary>
-    <pre>
-  - 하나의 페이지에서 로그인과 회원가입 구현
-  - 소셜로그인 기능 구현(구글, 카카오, 네이버)
-  - 회원가입 시 아이디(영문, 숫자)/사업자 등록증/비밀번호 유효성 검사 구현
-  - 로그인 후 마이페이지를 통해 회원정보 수정, 회원탈퇴, 해당 아이디의 게시판 작성글 확인 기능 구현</pre>
-    <a href="http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/common/signin/"> > 로그인/회원가입/마이페이지</a>
+  <summary>마이페이지</summary>
+  <p>
+    <img src="https://github.com/pshho/team3_django_project/assets/128444203/8b114c60-a997-4ee5-a1bc-926ebb90d887" alt="MyPage">
+    <img src="https://github.com/pshho/team3_django_project/assets/128444203/96c0dabd-ddd4-450a-a4b0-7a65a15eb122" alt="MyPage">
+  </p>
 </details>
 
-#### 청약 달력/점수 계산
-- <a>청약 달력</a>
+<a href="http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/common/signin/"> > 로그인/회원가입</a>
+
+#### * 청약 달력/점수 계산
+- 공공데이터포털 한국부동산원이 제공하는 실제 청약 일정 데이터를 API를 통해 달력에 표시 후 정보 제공
+- 청약 가점 계산 공식을 무주택기간/부양가족수/청약통장가입기간을 입력받아 계산 후 점수 제공
+
+<a href="http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/koreaCalendar/"> > 청약 일정</a><br>
+<a href="http://ec2-3-37-74-149.ap-northeast-2.compute.amazonaws.com/calculate/calculate/"> > 청약 점수 조회</a>
 
 #### 지도(검색)
 -
@@ -47,7 +56,7 @@
 <details>
   <summary>멤버별 역할</summary>
   <p>
-    <img src="https://github.com/pshho/team3_django_project/assets/128444203/fde8351a-6709-4135-9c47-f07718e4d8d4" alt="Image">
+    <img src="https://github.com/pshho/team3_django_project/assets/128444203/fde8351a-6709-4135-9c47-f07718e4d8d4" alt="Member">
   </p>
 </details>
 
