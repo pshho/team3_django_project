@@ -9,7 +9,7 @@
   > 중장년층 뿐만 아니라 청년들까지도 ‘내 집 마련의 꿈’ 에 대한 열기가 뜨거워지는 만큼 부동산에 관심 있는 사람들과 정보들은 늘어나고 있습니다.
   > 각자가 필요로 하는 정보들을 검색 기능을 사용하여 쉽게 찾을 수 있으며 홈페이지 회원들을 위한 정보 교류가 가능하도록 목표를 두었습니다.
   > <br>**Figma**: <a href="https://www.figma.com/file/zffQCT0SZ5TDC3JORNaqUA/Project_Django_Team-3?type=whiteboard&node-id=0-1&t=Q6DA7FvR7HepJfcw-0">집집 설계</a>
-  > [집집.pptx](https://github.com/pshho/team3_django_project/files/12791610/_.pptx)
+  > <br>**PPT**: [집집.pptx](https://github.com/pshho/team3_django_project/files/12791610/_.pptx)
 
 
 ### :mantelpiece_clock: 개발 기간
